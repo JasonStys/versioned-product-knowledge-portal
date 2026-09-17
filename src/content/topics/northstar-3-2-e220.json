@@ -1,0 +1,36 @@
+{
+  "id": "northstar-3-2-e220",
+  "topicSlug": "error-e-220",
+  "title": "Resolve channel diagnostic E-220",
+  "summary": "Identify and correct an open 4–20 mA loop reported as E-220 on Northstar version 3.2.",
+  "productId": "northstar-io-gateway",
+  "productName": "Northstar I/O Gateway",
+  "version": "3.2",
+  "lifecycle": "current",
+  "contentType": "troubleshooting",
+  "identifiers": ["E-220", "AI-OPEN"],
+  "synonyms": ["open circuit", "broken wire", "under range"],
+  "updated": "2026-08-03",
+  "visibility": "public",
+  "provenance": {
+    "sourceId": "sensor-calibration",
+    "pages": [2],
+    "checksum": "88f2a603251de8eb654c6cfa939b3fab5b26da6d8bf652fc77e17afbf7403745"
+  },
+  "sections": [
+    {
+      "id": "diagnosis",
+      "title": "Diagnosis",
+      "paragraphs": [
+        "E-220 is raised when measured loop current remains below 3.6 mA for the configured debounce interval."
+      ],
+      "steps": [
+        "Confirm the displayed channel and timestamp.",
+        "Place dependent control logic in a documented safe state.",
+        "Measure loop power at the transmitter.",
+        "Inspect polarity, terminals, and continuity.",
+        "Restore the loop and verify good quality after the debounce interval."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "id": "apex-2-0-quickstart",
+  "topicSlug": "quickstart",
+  "title": "Commission an Apex Control Hub",
+  "summary": "Connect power and Ethernet, verify the safe-state indicators, and complete first-login commissioning for version 2.0.",
+  "productId": "apex-control-hub",
+  "productName": "Apex Control Hub",
+  "version": "2.0",
+  "lifecycle": "current",
+  "contentType": "task",
+  "identifiers": ["ACH-200", "PWR-24DC"],
+  "synonyms": ["install", "setup", "first login"],
+  "updated": "2026-08-14",
+  "visibility": "public",
+  "provenance": {
+    "sourceId": "installation-procedure",
+    "pages": [1, 2],
+    "checksum": "14f53a6c98bd02b408782f235e0793887c057e3f0fb0c64ed82cbbc3075f07d8"
+  },
+  "sections": [
+    {
+      "id": "before-you-begin",
+      "title": "Before you begin",
+      "paragraphs": [
+        "Use an isolated lab network and a regulated 24 VDC supply rated for the connected loads."
+      ],
+      "warning": {
+        "level": "warning",
+        "condition": "Power is present while field wiring is being changed.",
+        "consequence": "Unexpected outputs or a short circuit can damage equipment.",
+        "avoidance": "Remove field power and verify zero energy before changing wiring."
+      }
+    },
+    {
+      "id": "commission",
+      "title": "Commission the controller",
+      "paragraphs": [
+        "The controller starts in a disabled-output state and requests a new administrator credential."
+      ],
+      "steps": [
+        "Connect protective earth and 24 VDC power.",
+        "Connect the service port to an isolated network.",
+        "Open https://192.0.2.20 and verify the displayed device identifier.",
+        "Create an administrator credential and store it outside the project files.",
+        "Confirm that every output remains disabled before attaching field loads."
+      ]
+    }
+  ]
+}

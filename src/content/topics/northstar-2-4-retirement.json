@@ -1,0 +1,36 @@
+{
+  "id": "northstar-2-4-retirement",
+  "topicSlug": "retirement-guide",
+  "title": "Plan migration from version 2.4",
+  "summary": "Identify compatibility changes and migrate a retired Northstar configuration to a maintained release.",
+  "productId": "northstar-io-gateway",
+  "productName": "Northstar I/O Gateway",
+  "version": "2.4",
+  "lifecycle": "retired",
+  "contentType": "concept",
+  "identifiers": ["FW-2.4", "EOS-2026"],
+  "synonyms": ["deprecated", "unsupported", "migration"],
+  "updated": "2026-02-28",
+  "visibility": "public",
+  "provenance": {
+    "sourceId": "firmware-release-notes",
+    "pages": [2],
+    "checksum": "a0508bf12f41fb8d0b1cd2b717ce3e5620ed1a927fa05003765edb45af64add0"
+  },
+  "sections": [
+    {
+      "id": "migration",
+      "title": "Migration considerations",
+      "paragraphs": [
+        "Version 2.4 is retired. Export channel configuration, capture register consumers, and test scaling against version 3.0 or later before replacement."
+      ],
+      "steps": [
+        "Inventory channel types, scaling, consumers, and credentials.",
+        "Export configuration and verify the backup can be parsed.",
+        "Map changed registers and authentication behavior.",
+        "Rehearse migration with a simulated or spare gateway.",
+        "Schedule cutover with a tested rollback plan."
+      ]
+    }
+  ]
+}

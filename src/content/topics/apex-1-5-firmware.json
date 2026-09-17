@@ -1,0 +1,42 @@
+{
+  "id": "apex-1-5-firmware",
+  "topicSlug": "firmware-update",
+  "title": "Update firmware from version 1.5",
+  "summary": "Back up configuration, verify package integrity, install the maintenance release, and confirm recovery readiness.",
+  "productId": "apex-control-hub",
+  "productName": "Apex Control Hub",
+  "version": "1.5",
+  "lifecycle": "maintained",
+  "contentType": "task",
+  "identifiers": ["FW-1.5", "PKG-SHA256"],
+  "synonyms": ["upgrade", "release", "backup"],
+  "updated": "2026-07-11",
+  "visibility": "public",
+  "provenance": {
+    "sourceId": "firmware-release-notes",
+    "pages": [1, 2],
+    "checksum": "716a28f49851bea9e09092393f58c0e9cfb0b492ec89c22b046984225fe8a0f1"
+  },
+  "sections": [
+    {
+      "id": "safe-update",
+      "title": "Perform a recoverable update",
+      "paragraphs": [
+        "A configuration export is not a substitute for an operational rollback plan."
+      ],
+      "warning": {
+        "level": "warning",
+        "condition": "Power or network access is removed while the package is being committed.",
+        "consequence": "The controller can restart into recovery mode.",
+        "avoidance": "Use stable power, a local service connection, and an approved maintenance window."
+      },
+      "steps": [
+        "Export configuration and record the running version.",
+        "Verify the package SHA-256 digest against the release manifest.",
+        "Place controlled outputs in their documented safe state.",
+        "Install the package and wait for the health check to complete.",
+        "Verify configuration, I/O quality, and rollback availability."
+      ]
+    }
+  ]
+}

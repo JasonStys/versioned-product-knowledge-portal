@@ -1,0 +1,105 @@
+[
+  { "query": "E-104", "expectedIds": ["apex-2-0-e104", "apex-1-5-e104"] },
+  {
+    "query": "E-104 certificate",
+    "filters": { "productId": "apex-control-hub", "version": "2.0" },
+    "expectedIds": ["apex-2-0-e104"]
+  },
+  { "query": "expired certificate", "expectedIds": ["apex-2-0-e104"] },
+  { "query": "clock certificate error", "expectedIds": ["apex-2-0-e104"] },
+  { "query": "https fault", "filters": { "version": "2.0" }, "expectedIds": ["apex-2-0-e104"] },
+  {
+    "query": "duplicate IP address",
+    "filters": { "version": "1.5" },
+    "expectedIds": ["apex-1-5-e104"]
+  },
+  { "query": "ARP-CONFLICT", "expectedIds": ["apex-1-5-e104"] },
+  { "query": "network address conflict", "expectedIds": ["apex-1-5-e104"] },
+  { "query": "first login", "expectedIds": ["apex-2-0-quickstart"] },
+  { "query": "commission controller", "expectedIds": ["apex-2-0-quickstart"] },
+  { "query": "ACH-200 setup", "expectedIds": ["apex-2-0-quickstart"] },
+  { "query": "TLS certificate rotation", "expectedIds": ["apex-2-0-tls"] },
+  { "query": "certificate renewal procedure", "expectedIds": ["apex-2-0-tls"] },
+  {
+    "query": "firmware update",
+    "filters": { "version": "1.5" },
+    "expectedIds": ["apex-1-5-firmware"]
+  },
+  { "query": "PKG-SHA256", "expectedIds": ["apex-1-5-firmware"] },
+  { "query": "recoverable upgrade", "expectedIds": ["apex-1-5-firmware"] },
+  {
+    "query": "version 1.0 retirement",
+    "filters": { "productId": "apex-control-hub" },
+    "expectedIds": ["apex-1-0-retirement"]
+  },
+  { "query": "unsupported Apex", "expectedIds": ["apex-1-0-retirement"] },
+  { "query": "migrate old controller", "expectedIds": ["apex-1-0-retirement"] },
+  {
+    "query": "4-20 mA calibration",
+    "filters": { "version": "3.2" },
+    "expectedIds": ["northstar-3-2-calibration"]
+  },
+  {
+    "query": "CAL-2PT",
+    "filters": { "version": "3.2" },
+    "expectedIds": ["northstar-3-2-calibration"]
+  },
+  {
+    "query": "zero span calibration",
+    "filters": { "version": "3.2" },
+    "expectedIds": ["northstar-3-2-calibration"]
+  },
+  { "query": "reference instrument identifier", "expectedIds": ["northstar-3-2-calibration"] },
+  { "query": "E-220", "expectedIds": ["northstar-3-2-e220"] },
+  { "query": "open circuit input", "expectedIds": ["northstar-3-2-e220"] },
+  { "query": "broken wire", "expectedIds": ["northstar-3-2-e220"] },
+  { "query": "under range diagnostic", "expectedIds": ["northstar-3-2-e220"] },
+  { "query": "Modbus register map", "expectedIds": ["northstar-3-2-modbus"] },
+  { "query": "REG-40001", "expectedIds": ["northstar-3-2-modbus"] },
+  { "query": "word order", "expectedIds": ["northstar-3-2-modbus"] },
+  { "query": "read only register", "expectedIds": ["northstar-3-2-modbus"] },
+  { "query": "API authentication", "expectedIds": ["northstar-3-0-api-auth"] },
+  { "query": "bearer token", "expectedIds": ["northstar-3-0-api-auth"] },
+  { "query": "SCOPE-READ", "expectedIds": ["northstar-3-0-api-auth"] },
+  { "query": "rotate credential", "expectedIds": ["northstar-3-0-api-auth"] },
+  { "query": "Northstar retirement", "expectedIds": ["northstar-2-4-retirement"] },
+  { "query": "version 2.4 unsupported", "expectedIds": ["northstar-2-4-retirement"] },
+  { "query": "migrate old gateway", "expectedIds": ["northstar-2-4-retirement"] },
+  {
+    "query": "E-104",
+    "filters": { "productId": "apex-control-hub", "version": "2.0" },
+    "expectedIds": ["apex-2-0-e104"]
+  },
+  {
+    "query": "E-104",
+    "filters": { "productId": "apex-control-hub", "version": "1.5" },
+    "expectedIds": ["apex-1-5-e104"]
+  },
+  {
+    "query": "analog input calibration",
+    "filters": { "version": "3.0" },
+    "expectedIds": ["northstar-3-0-calibration"]
+  },
+  {
+    "query": "analog input calibration",
+    "filters": { "version": "3.2" },
+    "expectedIds": ["northstar-3-2-calibration"]
+  },
+  {
+    "query": "sensor scaling",
+    "expectedIds": ["northstar-3-2-calibration", "northstar-3-0-calibration"]
+  },
+  {
+    "query": "input diagnostics",
+    "expectedIds": ["northstar-3-2-e220", "northstar-3-2-calibration"]
+  },
+  { "query": "HTTPS-443", "expectedIds": ["apex-2-0-tls"] },
+  { "query": "PWR-24DC", "expectedIds": ["apex-2-0-quickstart"] },
+  { "query": "UNIT-17", "expectedIds": ["northstar-3-2-modbus"] },
+  { "query": "EOS-2026", "expectedIds": ["apex-1-0-retirement", "northstar-2-4-retirement"] },
+  { "query": "install control hub", "expectedIds": ["apex-2-0-quickstart"] },
+  {
+    "query": "calibrate sensor offset",
+    "expectedIds": ["northstar-3-2-calibration", "northstar-3-0-calibration"]
+  }
+]

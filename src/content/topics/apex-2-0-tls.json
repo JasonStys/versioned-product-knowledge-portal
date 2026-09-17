@@ -1,0 +1,36 @@
+{
+  "id": "apex-2-0-tls",
+  "topicSlug": "tls-certificate-rotation",
+  "title": "Rotate a TLS certificate",
+  "summary": "Stage, validate, activate, and roll back an HTTPS certificate on an Apex Control Hub running version 2.0.",
+  "productId": "apex-control-hub",
+  "productName": "Apex Control Hub",
+  "version": "2.0",
+  "lifecycle": "current",
+  "contentType": "task",
+  "identifiers": ["TLS-CERT", "HTTPS-443"],
+  "synonyms": ["certificate", "renewal", "encryption"],
+  "updated": "2026-08-20",
+  "visibility": "public",
+  "provenance": {
+    "sourceId": "network-troubleshooting",
+    "pages": [1, 2],
+    "checksum": "760194edb9b4d4d5cbfef74c1fe11686d8a6775516a4e754210968a281238932"
+  },
+  "sections": [
+    {
+      "id": "rotation-plan",
+      "title": "Rotation plan",
+      "paragraphs": [
+        "Version 2.0 supports staging a certificate before activation so clients can validate the complete chain."
+      ],
+      "steps": [
+        "Export the current certificate fingerprint and rollback package.",
+        "Upload the new certificate and intermediate chain to the staging slot.",
+        "Run the built-in hostname and validity checks.",
+        "Activate the staged certificate during the approved window.",
+        "Verify two independent clients and retain the previous certificate until the window closes."
+      ]
+    }
+  ]
+}

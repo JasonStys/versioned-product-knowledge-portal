@@ -1,0 +1,36 @@
+{
+  "id": "northstar-3-0-calibration",
+  "topicSlug": "analog-input-calibration",
+  "title": "Calibrate a 4–20 mA input",
+  "summary": "Perform the version 3.0 two-point calibration workflow and verify engineering-unit scaling.",
+  "productId": "northstar-io-gateway",
+  "productName": "Northstar I/O Gateway",
+  "version": "3.0",
+  "lifecycle": "maintained",
+  "contentType": "task",
+  "identifiers": ["AI-420", "CAL-2PT"],
+  "synonyms": ["scaling", "span", "offset", "sensor"],
+  "updated": "2026-05-18",
+  "visibility": "public",
+  "provenance": {
+    "sourceId": "sensor-calibration",
+    "pages": [1],
+    "checksum": "b72a8cda638ab120b18ae66e006e974c55ff27d0cd82eb34aef30c89057aba8e"
+  },
+  "sections": [
+    {
+      "id": "calibration",
+      "title": "Two-point calibration",
+      "paragraphs": [
+        "Version 3.0 stores zero and span values but does not capture the reference-device metadata introduced in version 3.2."
+      ],
+      "steps": [
+        "Place the loop in a reviewed maintenance state.",
+        "Apply 4.000 mA and accept the zero reference.",
+        "Apply 20.000 mA and accept the span reference.",
+        "Verify the midpoint at 12.000 mA.",
+        "Restore the loop and document the external test equipment manually."
+      ]
+    }
+  ]
+}

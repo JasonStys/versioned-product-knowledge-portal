@@ -1,0 +1,36 @@
+{
+  "id": "northstar-3-0-api-auth",
+  "topicSlug": "api-authentication",
+  "title": "Authenticate to the read-only API",
+  "summary": "Create a scoped token, call the version 3.0 status endpoint, and rotate the credential without logging secrets.",
+  "productId": "northstar-io-gateway",
+  "productName": "Northstar I/O Gateway",
+  "version": "3.0",
+  "lifecycle": "maintained",
+  "contentType": "task",
+  "identifiers": ["API-V3", "SCOPE-READ"],
+  "synonyms": ["token", "credential", "password", "rest"],
+  "updated": "2026-05-20",
+  "visibility": "public",
+  "provenance": {
+    "sourceId": "api-reference",
+    "pages": [1],
+    "checksum": "a715736ae88f22259a4b9686010d731d277b99b63a6c3c7c44d4194c67a98016"
+  },
+  "sections": [
+    {
+      "id": "token-use",
+      "title": "Use a scoped token",
+      "paragraphs": [
+        "The example uses a placeholder and never stores a credential in source control or browser storage."
+      ],
+      "code": "curl --fail --header 'Authorization: Bearer ${NORTHSTAR_TOKEN}' https://gateway.example.invalid/api/v3/status",
+      "warning": {
+        "level": "notice",
+        "condition": "A token is copied into a command history, URL, or repository file.",
+        "consequence": "The credential can be recovered by another user or automated scanner.",
+        "avoidance": "Load secrets from a protected environment and redact authorization headers from logs."
+      }
+    }
+  ]
+}

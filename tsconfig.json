@@ -1,0 +1,14 @@
+{
+  "extends": "astro/tsconfigs/strictest",
+  "compilerOptions": {
+    "allowJs": false,
+    "exactOptionalPropertyTypes": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "verbatimModuleSyntax": true,
+    "types": ["vitest/globals", "node"]
+  },
+  "include": [".astro/types.d.ts", "**/*"],
+  "exclude": ["dist", "coverage", "playwright-report", "test-results"]
+}

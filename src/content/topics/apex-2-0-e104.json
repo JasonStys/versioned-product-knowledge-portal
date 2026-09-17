@@ -1,0 +1,49 @@
+{
+  "id": "apex-2-0-e104",
+  "topicSlug": "error-e-104",
+  "title": "Resolve diagnostic E-104",
+  "summary": "Diagnose version 2.0 error E-104, which indicates that the configured trust certificate has expired or is not yet valid.",
+  "productId": "apex-control-hub",
+  "productName": "Apex Control Hub",
+  "version": "2.0",
+  "lifecycle": "current",
+  "contentType": "troubleshooting",
+  "identifiers": ["E-104", "TLS-CERT"],
+  "synonyms": ["certificate expired", "clock", "https fault"],
+  "updated": "2026-08-20",
+  "visibility": "public",
+  "provenance": {
+    "sourceId": "network-troubleshooting",
+    "pages": [2],
+    "checksum": "756f1f2a3d86e5c0e04f3162a51d620302fce6ec589ba612514d82e5a19c2576"
+  },
+  "sections": [
+    {
+      "id": "meaning",
+      "title": "Meaning",
+      "paragraphs": [
+        "In version 2.0, E-104 is raised when certificate validity does not include the controller's current UTC time. This differs from the version 1.5 definition."
+      ],
+      "warning": {
+        "level": "caution",
+        "condition": "Certificate checking is disabled to bypass E-104.",
+        "consequence": "Clients can no longer verify the controller endpoint.",
+        "avoidance": "Correct time synchronization or replace the certificate; do not disable verification."
+      }
+    },
+    {
+      "id": "resolution",
+      "title": "Resolution",
+      "paragraphs": [
+        "Compare the controller clock with the certificate's validity window before replacing credentials."
+      ],
+      "steps": [
+        "Record the current UTC time and E-104 event timestamp.",
+        "Verify NTP reachability and time-zone display settings.",
+        "Inspect the certificate not-before and not-after dates.",
+        "Install a valid replacement certificate if the clock is correct.",
+        "Reconnect one test client and confirm that E-104 clears."
+      ]
+    }
+  ]
+}

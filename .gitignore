@@ -1,0 +1,11 @@
+node_modules/
+.astro/
+dist/
+coverage/
+reports/coverage/
+reports/playwright-*/
+test-results/
+.env
+.env.*
+!.env.example
+*.log

@@ -1,0 +1,49 @@
+{
+  "id": "apex-1-5-e104",
+  "topicSlug": "error-e-104",
+  "title": "Resolve diagnostic E-104",
+  "summary": "Diagnose version 1.5 error E-104, which indicates that an Ethernet address conflicts with another host.",
+  "productId": "apex-control-hub",
+  "productName": "Apex Control Hub",
+  "version": "1.5",
+  "lifecycle": "maintained",
+  "contentType": "troubleshooting",
+  "identifiers": ["E-104", "ARP-CONFLICT"],
+  "synonyms": ["duplicate address", "ethernet", "network conflict"],
+  "updated": "2026-07-02",
+  "visibility": "public",
+  "provenance": {
+    "sourceId": "network-troubleshooting",
+    "pages": [1],
+    "checksum": "65de031589bdab25f40ac50d292de785913424f0d7927e6c62e1b64480c1ef10"
+  },
+  "sections": [
+    {
+      "id": "meaning",
+      "title": "Meaning",
+      "paragraphs": [
+        "In version 1.5, E-104 reports a duplicate IPv4 address. Version 2.0 reassigns this identifier to certificate validity, so always filter by version."
+      ],
+      "warning": {
+        "level": "notice",
+        "condition": "A procedure for another software version is followed.",
+        "consequence": "Troubleshooting can change unrelated certificate settings without resolving the address conflict.",
+        "avoidance": "Confirm the installed version and keep the version filter active."
+      }
+    },
+    {
+      "id": "resolution",
+      "title": "Resolution",
+      "paragraphs": [
+        "Use the switch address table and an ARP inspection from an isolated workstation to locate the conflicting host."
+      ],
+      "steps": [
+        "Disconnect the controller from the production segment.",
+        "Confirm its configured static address and subnet.",
+        "Locate the duplicate MAC address in the switch or DHCP records.",
+        "Assign a unique address under the site's addressing plan.",
+        "Reconnect and verify that E-104 does not recur."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "id": "northstar-3-2-calibration",
+  "topicSlug": "analog-input-calibration",
+  "title": "Calibrate a 4–20 mA input",
+  "summary": "Apply zero and span references to a Northstar analog input while preserving version 3.2 channel diagnostics.",
+  "productId": "northstar-io-gateway",
+  "productName": "Northstar I/O Gateway",
+  "version": "3.2",
+  "lifecycle": "current",
+  "contentType": "task",
+  "identifiers": ["AI-420", "CAL-2PT"],
+  "synonyms": ["scaling", "span", "offset", "sensor"],
+  "updated": "2026-08-02",
+  "visibility": "public",
+  "provenance": {
+    "sourceId": "sensor-calibration",
+    "pages": [1, 2],
+    "checksum": "c28c71bffced548858868c52898be4d3bd503e16da8a40378078e5f27c395d95"
+  },
+  "sections": [
+    {
+      "id": "calibration",
+      "title": "Two-point calibration",
+      "paragraphs": [
+        "Version 3.2 records the reference instrument identifier with each calibration event."
+      ],
+      "warning": {
+        "level": "caution",
+        "condition": "Calibration is started while the channel controls an active process.",
+        "consequence": "Injected references can be interpreted as real process values.",
+        "avoidance": "Place the loop in a reviewed manual or maintenance state before injecting current."
+      },
+      "steps": [
+        "Record the reference instrument identifier and calibration date.",
+        "Apply 4.000 mA and accept the zero reference after stabilization.",
+        "Apply 20.000 mA and accept the span reference after stabilization.",
+        "Return the source to 12.000 mA and verify the midpoint tolerance.",
+        "Restore the loop and confirm value, unit, quality, and timestamp."
+      ]
+    }
+  ]
+}

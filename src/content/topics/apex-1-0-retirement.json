@@ -1,0 +1,35 @@
+{
+  "id": "apex-1-0-retirement",
+  "topicSlug": "retirement-guide",
+  "title": "Plan migration from version 1.0",
+  "summary": "Inventory dependencies and move a retired Apex Control Hub configuration to a supported software version.",
+  "productId": "apex-control-hub",
+  "productName": "Apex Control Hub",
+  "version": "1.0",
+  "lifecycle": "retired",
+  "contentType": "concept",
+  "identifiers": ["FW-1.0", "EOS-2026"],
+  "synonyms": ["deprecated", "unsupported", "migration"],
+  "updated": "2026-06-30",
+  "visibility": "public",
+  "provenance": {
+    "sourceId": "firmware-release-notes",
+    "pages": [2],
+    "checksum": "720ee9c6bce51adc95aca5b2b3ce924b47623871198e8747a68629007d63ca45"
+  },
+  "sections": [
+    {
+      "id": "support-status",
+      "title": "Support status",
+      "paragraphs": [
+        "Version 1.0 is retired and no longer receives maintenance updates. Existing systems should be isolated while migration is planned."
+      ],
+      "warning": {
+        "level": "caution",
+        "condition": "A retired controller remains reachable from untrusted networks.",
+        "consequence": "Known defects can remain exposed without a supported remediation path.",
+        "avoidance": "Restrict network access and prioritize migration to a maintained release."
+      }
+    }
+  ]
+}

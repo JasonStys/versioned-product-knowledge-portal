@@ -1,0 +1,30 @@
+{
+  "id": "northstar-3-2-modbus",
+  "topicSlug": "modbus-register-map",
+  "title": "Read the Modbus TCP register map",
+  "summary": "Use the version 3.2 register map with explicit word order, data types, scaling, and read-only boundaries.",
+  "productId": "northstar-io-gateway",
+  "productName": "Northstar I/O Gateway",
+  "version": "3.2",
+  "lifecycle": "current",
+  "contentType": "reference",
+  "identifiers": ["MODBUS-TCP", "REG-40001", "UNIT-17"],
+  "synonyms": ["register", "word order", "tcp"],
+  "updated": "2026-08-06",
+  "visibility": "public",
+  "provenance": {
+    "sourceId": "api-reference",
+    "pages": [1, 2],
+    "checksum": "3ca3ac52754bc0e0f93691a5c69e0187a86146e63e4fddff4e517e46ca81dcbc"
+  },
+  "sections": [
+    {
+      "id": "registers",
+      "title": "Register conventions",
+      "paragraphs": [
+        "Documentation addresses are one-based while protocol data addresses are zero-based. Multi-register floating-point values use big-endian bytes with the high word first."
+      ],
+      "code": "40001  AI0_VALUE   float32  read-only  engineering units\n40003  AI0_QUALITY uint16   read-only  0=good, 1=stale, 2=fault"
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+.astro/
+coverage/
+dist/
+node_modules/
+reports/
+pnpm-lock.yaml
