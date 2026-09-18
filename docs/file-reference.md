@@ -5,7 +5,7 @@
 | File                                   | Purpose                                                                                             |
 | -------------------------------------- | --------------------------------------------------------------------------------------------------- |
 | `README.md`                            | Outcome, quick start, architecture, feature summary, commands, boundaries, and documentation index. |
-| `package.json` / `pnpm-lock.yaml`      | Exact scripts, runtime policy, direct dependencies, and reproducible dependency graph.              |
+| `package.json` / `pnpm-lock.yaml`      | Exact scripts, Astro type synchronization, runtime policy, dependencies, and reproducible graph.    |
 | `pnpm-workspace.yaml`                  | Explicit `esbuild` install-script allowlist and release-age exceptions recorded by pnpm.            |
 | `astro.config.ts`                      | Static output, canonical origin placeholder, directory routes, and origin checking.                 |
 | `tsconfig.json`                        | Astro strictest TypeScript plus additional indexing and optional-property checks.                   |

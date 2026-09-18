@@ -21,6 +21,7 @@ interaction, keyboard behavior, responsive reflow, and automated accessibility r
 
 ```bash
 pnpm format:check
+pnpm types:sync
 pnpm lint
 pnpm typecheck
 pnpm test:coverage
