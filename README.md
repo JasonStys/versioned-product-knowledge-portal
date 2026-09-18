@@ -150,6 +150,11 @@ The [file reference](docs/file-reference.md) explains every authored or generate
   emit HTTP redirect status codes.
 - No procedure in this demonstration should be used to control or service real equipment.
 
+## Maintenance evidence
+
+See the [latest maintenance audit](docs/reports/maintenance-audit-2026-09-18.md) for the validated
+default-branch run and dependency compatibility decisions.
+
 ## License
 
 Code and synthetic content are available under the [MIT License](LICENSE).
