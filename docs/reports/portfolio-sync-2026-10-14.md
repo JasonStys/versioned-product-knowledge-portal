@@ -11,6 +11,10 @@ from the reviewed manifests. No audit or coverage budget is lowered.
 
 Coordinated CodeQL steps use the same reviewed immutable release where present.
 Source and generated-symbol contracts remain enforced by the existing workflows.
+The first candidate audit identified vulnerable transitive `http-cache-semantics`
+and `source-map-js` versions. These and their PostCSS path were updated inside
+existing allowed ranges; the production audit reports no known vulnerabilities.
+No advisory is waived, and native build/search/browser gates remain required.
 The complete candidate must pass its applicable native CI before promotion.
 [Inspect candidate checks](https://github.com/JasonStys/versioned-product-knowledge-portal/actions?query=branch%3Amaintenance%2Fportfolio-sync-20261014).
 
