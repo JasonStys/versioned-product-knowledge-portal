@@ -80,3 +80,11 @@ matching redirect manifest. See [operations](operations.md).
 - [ADR 0001: Static-first Astro portal](adr/0001-static-first-portal.md)
 - [ADR 0002: Deterministic lexical search before semantic retrieval](adr/0002-deterministic-lexical-search.md)
 - [ADR 0003: Separate public and restricted search](adr/0003-public-restricted-boundary.md)
+
+## Static edition review
+
+The bounded pure comparison model aligns exact product/topic/version keys and stable section IDs.
+Astro renders each source edition separately at build time, including complete notices and
+provenance; browser code only chooses an allowlisted prebuilt route. This adds no backend or
+private-content access assumptions, and does not change extractive search/abstention. See
+[edition comparison](edition-comparison.md) for complexity, limits and interpretation.

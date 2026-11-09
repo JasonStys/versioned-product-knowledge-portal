@@ -57,3 +57,13 @@ non-browser suite on Node.js 22 and 24 before running the browser job.
 Manual screen-reader and forced-color checks are release tasks, not automated claims. The small
 corpus does not exercise stemming in other languages, very large indexes, access-controlled
 retrieval, or production analytics.
+
+## Edition comparison regression coverage
+
+The unchanged unit coverage gates now include the pure comparison module. Browser-only chooser
+bindings live with UI components and are validated through actual built-page Playwright flows; no
+API responses or generated HTML are mocked. Desktop and mobile tests cover E-104 meaning changes,
+warning absence without risk inference, reversed comparisons, retired/missing topics, injected
+non-allowlisted options, no-JavaScript static behavior, unique anchors, reflow and axe checks.
+`PORTAL_TEST_PORT=44361 pnpm test:e2e` selects an owned test-only port; servers are never reused.
+See [latest evidence](reports/comparison-2026-11-09.md).

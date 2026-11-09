@@ -19,3 +19,13 @@ Primary sources used for design decisions and validation:
 
 Dependencies and standards should be rechecked before each release. The repository records the
 selected versions in `package.json`, `pnpm-lock.yaml`, and workflow comments.
+
+## Validated dependency repair
+
+The existing production audit identified eight Undici advisories through Astro → Unifont. The
+compatible transitive lock update from 8.11.2 to 8.12.2 follows the
+[official security release](https://github.com/nodejs/undici/releases/tag/v8.12.2) and
+[upstream excessive-encoding advisory](https://github.com/nodejs/undici/security/advisories/GHSA-xjj6-f33q-929c).
+The exact package integrity was verified against
+[official npm release metadata](https://registry.npmjs.org/undici/8.12.2). Unifont's `^8.0.0` range
+accepts the patch; no override, advisory ignore or dependency major upgrade was introduced.
