@@ -39,3 +39,11 @@ for installed-base users but is labeled, filtered, and linked to migration guida
 The current JSON fixtures model an export from an upstream documentation pipeline. A future importer
 should validate the upstream schema, retain source checksums/page mappings, reject duplicate
 canonical routes, and produce a deterministic diff before replacing this directory.
+
+## Cross-edition identity
+
+Comparison aligns only an exact product/topic slug across two known catalog versions and stable
+section IDs. It keeps absent editions/sections/warnings explicit and renders both sources intact. A
+reused identifier does not imply unchanged meaning; a renamed section is absent/added. Matching
+never substitutes another product or a current procedure for a retired edition. See
+[edition comparison](edition-comparison.md) for exact field comparisons and editorial limits.

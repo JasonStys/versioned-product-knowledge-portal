@@ -44,6 +44,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
       <nav aria-label="Primary navigation">
         <a href="/products/">Products</a>
         <a href="/search/">Search</a>
+        <a href="/compare/">Compare</a>
         <a href="/about/">About</a>
       </nav>
     </header>
@@ -51,7 +52,10 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
       <slot />
     </main>
     <footer>
-      <p>Independent portfolio demonstration using synthetic products and documentation.</p>
+      <p>
+        Built by <a href="https://github.com/JasonStys">Jason Stys</a>. Independent portfolio
+        demonstration using synthetic products and documentation.
+      </p>
       <p>
         <a href="/about/">Scope, evidence, and limitations</a>
       </p>

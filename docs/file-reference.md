@@ -27,7 +27,7 @@
 | File or directory                                    | Purpose                                                                              |
 | ---------------------------------------------------- | ------------------------------------------------------------------------------------ |
 | `src/content.config.ts`                              | Zod contract for identifiers, versions, provenance, sections, and complete warnings. |
-| `src/content/topics/*.json`                          | Eleven synthetic, version-qualified documentation topics.                            |
+| `src/content/topics/*.json`                          | Twelve synthetic, version-qualified documentation topics.                            |
 | `src/data/products.ts`                               | Product/version/lifecycle catalog and guarded lookup helpers.                        |
 | `src/data/synonyms.ts`                               | Small reviewed, non-recursive query-expansion map.                                   |
 | `src/data/search-judgments.json`                     | Fifty reviewed relevance queries, filters, and expected documents.                   |
@@ -73,3 +73,22 @@
 `operations.md`, `testing-and-validation.md`, `search-evaluation.md`, `references.md`, and
 `docs/adr/*.md` document design and evidence. `reports/*.json`, `reports/coverage/`, and Playwright
 output are generated; CI retains them as artifacts.
+
+## Edition review additions
+
+| File                                                   | Purpose                                                                                                                     |
+| ------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------- |
+| `src/lib/comparison.ts`                                | Bounded product/version/topic comparison model, section/warning statuses, canonical routes and route budget.                |
+| `src/components/comparison-chooser.ts`                 | Product-bound selects and explicit allowlisted same-origin navigation; browser-tested UI boundary.                          |
+| `src/components/TopicSections.astro`                   | Shared exact source renderer with preserved order and unique optional anchor prefixes.                                      |
+| `src/components/ComparisonEdition.astro`               | Isolated applicability, missing-topic state, full source text and provenance for one edition.                               |
+| `src/pages/compare/index.astro`                        | Accessible chooser, escaped build-time choices and no-JavaScript direct links.                                              |
+| `src/pages/compare/[product]/[from]/[to]/[slug].astro` | Shareable static comparison pages, cautious absence labels and source anchors.                                              |
+| `tests/unit/comparison.test.ts`                        | Independent exact-change/corruption/applicability/budget tests and actual corpus cases.                                     |
+| `tests/e2e/comparison.spec.ts`                         | Real chooser/topic links, reversed/missing/retired/no-JavaScript reviews, hostile option denial, axe/reflow/unique anchors. |
+| `docs/edition-comparison.md`                           | Operational walkthroughs, interpretation, bounds and complexity.                                                            |
+| `docs/reports/comparison-2026-11-09.md`                | Exact measured commands, results and hosted-validation limits.                                                              |
+
+`playwright.config.ts` uses a dedicated owned preview server and refuses reuse of unknown servers.
+Set `PORTAL_TEST_PORT` (1024..65535) to select an unused local test port without affecting CI
+defaults.

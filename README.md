@@ -11,7 +11,7 @@ independent portfolio project and is not operating guidance for real equipment.
 
 ## 60-second quick start
 
-Prerequisites: Node.js 22.12–24 and pnpm 11.
+Prerequisites: Node.js 22.19–24 and pnpm 11.
 
 ```bash
 pnpm install --frozen-lockfile
@@ -20,6 +20,12 @@ pnpm dev
 
 Open `http://localhost:4321`, select **Search**, choose version `2.0`, and search for `E-104`.
 Change the filter to `1.5` to see why version context is part of the retrieval contract.
+
+Select **Compare** to choose two versions of one product and a stable topic. For example, compare
+Apex `1.5` to `2.0`, `error-e-104`: the same diagnostic identity changes from an address conflict to
+a certificate-validity problem. Both exact editions, warnings, applicability and provenance stay
+visible; the application never combines their procedures. Every topic links to comparisons against
+its other known versions. Comparison URLs are shareable static pages and work without JavaScript.
 
 Run the complete non-browser quality gate:
 
@@ -38,6 +44,10 @@ pnpm test:e2e
 
 - **Version correctness:** every canonical URL includes product, version, and topic slug; reused
   diagnostic codes are disambiguated by explicit filters.
+- **Edition review:** compare exact section text, ordered steps, code and every warning field by
+  stable topic/section identity. Added, absent, changed and unchanged content is labeled, including
+  warnings omitted by an older edition and topics absent from a retired version. Absence is never
+  treated as proof a feature or risk disappeared.
 - **Measured lexical retrieval:** a bounded inverted index uses BM25-style scoring, field weights,
   exact-identifier boosts, reviewed synonyms, deterministic tie-breaking, and a 50-query judgment
   set.
@@ -65,9 +75,11 @@ flowchart LR
     E --> I[50-query relevance evaluation]
 ```
 
-The public site is generated at build time. The only browser JavaScript initializes the search
-panel, applies filters, ranks local documents, and creates results with `textContent`. See
-[architecture](docs/architecture.md) and [ADR 0001](docs/adr/0001-static-first-portal.md).
+The public site is generated at build time. Browser JavaScript initializes the search panel and
+comparison chooser, applies product/version filters, ranks local documents, and creates results with
+`textContent`. Comparison contents are rendered at build time with separate source columns and
+complete notices. See [architecture](docs/architecture.md) and
+[ADR 0001](docs/adr/0001-static-first-portal.md).
 
 ## Major features
 
@@ -88,6 +100,19 @@ Exact identifiers such as `E-104` and `REG-40001` receive a separate boost. Quer
 limited to a reviewed synonym map, and product/version filtering happens before scoring. The answer
 mode never invokes a model or tool—it returns a source summary and citations or an explicit
 abstention.
+
+### Version comparison
+
+The comparison workflow matches a topic only within one product and two catalog versions. It keeps
+missing counterparts explicit, shows retired/maintained applicability, compares source-ordered
+sections and warnings, and preserves canonical links, source IDs, pages and checksums in both
+columns. A reused identifier does not imply equivalent meaning. Reverse links and stable URLs let a
+support engineer or documentation reviewer share the same review context. The chooser navigates only
+to an allowlisted generated route. Keyboard, mobile, no-JavaScript, missing-topic and warning review
+flows are exercised against the actual built site.
+
+See [the edition comparison guide](docs/edition-comparison.md) for realistic walkthroughs and
+bounds, and [latest validation](docs/reports/comparison-2026-11-09.md) for measured results.
 
 ### Validation evidence
 
@@ -129,6 +154,7 @@ The [file reference](docs/file-reference.md) explains every authored or generate
 ## Documentation
 
 - [Architecture and complexity](docs/architecture.md)
+- [Edition comparison](docs/edition-comparison.md)
 - [Content and URL contracts](docs/content-model.md)
 - [Search evaluation](docs/search-evaluation.md)
 - [Testing and validation](docs/testing-and-validation.md)

@@ -1,7 +1,7 @@
 {
   "generatedBy": "pnpm validate:links",
-  "htmlFiles": 23,
-  "linksChecked": 23,
+  "htmlFiles": 68,
+  "linksChecked": 68,
   "broken": [],
   "budgets": {
     "scriptBytes": {
@@ -9,7 +9,7 @@
       "maximum": 102400
     },
     "styleBytes": {
-      "actual": 7104,
+      "actual": 8129,
       "maximum": 40960
     }
   }

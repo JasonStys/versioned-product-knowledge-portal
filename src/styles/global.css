@@ -514,3 +514,69 @@ select {
     max-width: none;
   }
 }
+
+/* Edition comparisons preserve source boundaries and stack naturally on small screens. */
+.comparison-controls {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  padding: 1.3rem;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  border-radius: 0.7rem;
+}
+.comparison-controls label {
+  font-weight: 700;
+}
+.comparison-controls button {
+  cursor: pointer;
+  font: inherit;
+}
+.comparison-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+  align-items: start;
+}
+.comparison-edition {
+  min-width: 0;
+  padding: 1.2rem;
+  border: 1px solid var(--line);
+  border-radius: 0.7rem;
+  background: var(--panel);
+  overflow-wrap: anywhere;
+}
+.comparison-edition .provenance {
+  padding: 0;
+}
+.comparison-edition .provenance dl div {
+  grid-template-columns: 1fr;
+  gap: 0.1rem;
+}
+.comparison-changes {
+  padding-left: 1.3rem;
+}
+.comparison-changes li {
+  margin-bottom: 1rem;
+}
+.comparison-source-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.missing-topic,
+.warning-absence {
+  border-left: 0.3rem solid var(--warning);
+  padding: 0.7rem;
+  background: #fffbeb;
+}
+@media (max-width: 52rem) {
+  .comparison-grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 36rem) {
+  .comparison-controls {
+    grid-template-columns: 1fr;
+  }
+}
