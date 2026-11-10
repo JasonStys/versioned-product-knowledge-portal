@@ -52,6 +52,16 @@ Reference run on September 16, 2026 with Node.js 24 and pnpm 11.19.0:
 Machine-readable results are written to `reports/` and uploaded by CI. GitHub Actions repeats the
 non-browser suite on Node.js 22 and 24 before running the browser job.
 
+## Security analysis
+
+The independent CodeQL workflow runs the `javascript-typescript` and `actions` extractors with
+`build-mode: none` and `security-extended` on main pushes, main-targeting PRs, weekly schedules, and
+manual requests. Unit repository-policy checks cover immutable action references and the restricted
+upload authority. Normal Node 22/24, coverage, static build, search and Chromium gates remain
+required. The [scan record](reports/codeql-2026-11-09.md) distinguishes local checks from hosted
+extraction/query/upload evidence. CodeQL does not directly establish `.astro` template, PDF/content,
+accessibility or runtime safety; an empty alert list is not a security certificate.
+
 ## Gaps
 
 Manual screen-reader and forced-color checks are release tasks, not automated claims. The small

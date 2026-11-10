@@ -19,6 +19,30 @@ or device endpoints.
 | Misleading generated answer          | Extractive summary only, citations, version filter, threshold, explicit abstention, no action tools.             | Relevant source material can still be incomplete or wrong.       |
 | Private-content disclosure           | This build contains public synthetic content only. ADR requires a separate authorized index for restricted data. | Adding authentication only in the UI would be insecure.          |
 
+## Code scanning
+
+`.github/workflows/codeql.yml` explicitly scans `javascript-typescript` and `actions` in separate,
+bounded Ubuntu jobs. Both use no-build extraction and GitHub's `security-extended` query suite. The
+workflow covers main pushes, pull requests targeting main, weekly scheduled analysis, and manual
+requests; there are no source-path filters, query suppressions, or ignored findings. JavaScript,
+TypeScript and workflow YAML are supported; `.astro` templates and CSS are not claimed as direct
+CodeQL coverage. Real rendered-page, injection, link and accessibility regressions remain part of
+the existing validation suite.
+
+The workflow default stays `contents: read`. Only each analysis job receives
+`security-events: write` for its code-scanning result upload. Checkout does not persist credentials.
+The full commit pins are reviewed, no repository build/install commands run with that upload
+permission, and no deployment secrets or `pull_request_target` trigger are introduced. Dependency
+and extractor caches and CodeQL database uploads are disabled; processed SARIF findings remain
+available in GitHub's Security view without creating extra run artifacts.
+
+A successful analysis means extraction, query execution and result processing completed; it does not
+itself mean zero alerts. Review each language/category, exact event revision and any extraction
+warnings. Inspect new and existing open alerts, trace the real input-to-sink path, fix a confirmed
+issue with a regression test, and rerun both CodeQL and normal validation. Unsupported syntax,
+framework modeling gaps and false negatives remain possible. The dependency audit covers a different
+supply-chain boundary. See [the setup and validation record](reports/codeql-2026-11-09.md).
+
 ## Secrets
 
 The build requires no secrets. `.env*` files are ignored except the example convention, commands use
