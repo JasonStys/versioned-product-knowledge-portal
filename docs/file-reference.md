@@ -2,25 +2,26 @@
 
 ## Root and automation
 
-| File                                   | Purpose                                                                                             |
-| -------------------------------------- | --------------------------------------------------------------------------------------------------- |
-| `README.md`                            | Outcome, quick start, architecture, feature summary, commands, boundaries, and documentation index. |
-| `package.json` / `pnpm-lock.yaml`      | Exact scripts, Astro type synchronization, runtime policy, dependencies, and reproducible graph.    |
-| `pnpm-workspace.yaml`                  | Explicit `esbuild` install-script allowlist and release-age exceptions recorded by pnpm.            |
-| `astro.config.ts`                      | Static output, canonical origin placeholder, directory routes, and origin checking.                 |
-| `tsconfig.json`                        | Astro strictest TypeScript plus additional indexing and optional-property checks.                   |
-| `eslint.config.mjs`                    | Type-aware strict/stylistic lint configuration.                                                     |
-| `vitest.config.ts`                     | Unit-test discovery, V8 reporting, and coverage gates.                                              |
-| `playwright.config.ts`                 | Desktop/mobile Chromium projects, preview server, traces, and reports.                              |
-| `.prettierrc.json` / `.prettierignore` | Stable TypeScript, Astro, JSON, YAML, CSS, and Markdown formatting.                                 |
-| `.npmrc`                               | Exact saves, strict peers, engines, and seven-day dependency release-age policy.                    |
-| `.gitignore` / `.gitattributes`        | Generated exclusions, secret-file exclusions, LF normalization, and binary handling.                |
-| `.github/workflows/ci.yml`             | Node 22/24 validation, audit, browser checks, and evidence artifacts.                               |
-| `.github/dependabot.yml`               | Grouped weekly package and action updates with bounded PR counts.                                   |
-| `CONTRIBUTING.md`                      | Development, content, code, test, commit, and review requirements.                                  |
-| `SECURITY.md`                          | Supported version, private reporting, and public-content boundary.                                  |
-| `CHANGELOG.md`                         | User-visible release history.                                                                       |
-| `LICENSE`                              | MIT license for code and synthetic content.                                                         |
+| File                                   | Purpose                                                                                                        |
+| -------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| `README.md`                            | Outcome, quick start, architecture, feature summary, commands, boundaries, and documentation index.            |
+| `package.json` / `pnpm-lock.yaml`      | Exact scripts, Astro type synchronization, runtime policy, dependencies, and reproducible graph.               |
+| `pnpm-workspace.yaml`                  | Explicit `esbuild` install-script allowlist and release-age exceptions recorded by pnpm.                       |
+| `astro.config.ts`                      | Static output, canonical origin placeholder, directory routes, and origin checking.                            |
+| `tsconfig.json`                        | Astro strictest TypeScript plus additional indexing and optional-property checks.                              |
+| `eslint.config.mjs`                    | Type-aware strict/stylistic lint configuration.                                                                |
+| `vitest.config.ts`                     | Unit-test discovery, V8 reporting, and coverage gates.                                                         |
+| `playwright.config.ts`                 | Desktop/mobile Chromium projects, preview server, traces, and reports.                                         |
+| `.prettierrc.json` / `.prettierignore` | Stable TypeScript, Astro, JSON, YAML, CSS, and Markdown formatting.                                            |
+| `.npmrc`                               | Exact saves, strict peers, engines, and seven-day dependency release-age policy.                               |
+| `.gitignore` / `.gitattributes`        | Generated exclusions, secret-file exclusions, LF normalization, and binary handling.                           |
+| `.github/workflows/ci.yml`             | Node 22/24 validation, audit, browser checks, and evidence artifacts.                                          |
+| `.github/workflows/codeql.yml`         | Separate JavaScript/TypeScript and Actions security-extended scans, bounded execution and scoped SARIF upload. |
+| `.github/dependabot.yml`               | Grouped weekly package and action updates with bounded PR counts.                                              |
+| `CONTRIBUTING.md`                      | Development, content, code, test, commit, and review requirements.                                             |
+| `SECURITY.md`                          | Supported version, private reporting, and public-content boundary.                                             |
+| `CHANGELOG.md`                         | User-visible release history.                                                                                  |
+| `LICENSE`                              | MIT license for code and synthetic content.                                                                    |
 
 ## Application
 
@@ -55,17 +56,18 @@
 
 ## Tests and tools
 
-| File                                    | Purpose                                                                                   |
-| --------------------------------------- | ----------------------------------------------------------------------------------------- |
-| `tests/unit/search.test.ts`             | Tokenization, boosts, filters, synonyms, bounds, citations, abstention, and empty corpus. |
-| `tests/unit/content.test.ts`            | Stable routes, flattened searchable content, and public search projection.                |
-| `tests/unit/redirects.test.ts`          | Known/unknown redirect behavior and local targets.                                        |
-| `tests/unit/repository-quality.test.ts` | Neutrality, headers, docs, action SHAs, warning/route integrity, and manifest sync.       |
-| `tests/e2e/portal.spec.ts`              | axe, keyboard bypass, version trap, abstention, warning evidence, and mobile reflow.      |
-| `tools/load-topics.ts`                  | Stable offline topic loading and defensive narrowing.                                     |
-| `tools/evaluate-search.ts`              | Recall@5/MRR calculation and Markdown/JSON evidence.                                      |
-| `tools/validate-links.ts`               | Generated-route crawl plus JavaScript/CSS size budgets.                                   |
-| `tools/update-symbol-index.ts`          | Line-accurate top-level symbol indexes for TypeScript, JavaScript, and Astro.             |
+| File                                    | Purpose                                                                                             |
+| --------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| `tests/unit/search.test.ts`             | Tokenization, boosts, filters, synonyms, bounds, citations, abstention, and empty corpus.           |
+| `tests/unit/content.test.ts`            | Stable routes, flattened searchable content, and public search projection.                          |
+| `tests/unit/redirects.test.ts`          | Known/unknown redirect behavior and local targets.                                                  |
+| `tests/unit/repository-quality.test.ts` | Neutrality, headers, docs, action SHAs, warning/route integrity, and manifest sync.                 |
+| `tests/unit/codeql-policy.test.ts`      | Actual YAML security-workflow structure and twenty independently corrupted negative configurations. |
+| `tests/e2e/portal.spec.ts`              | axe, keyboard bypass, version trap, abstention, warning evidence, and mobile reflow.                |
+| `tools/load-topics.ts`                  | Stable offline topic loading and defensive narrowing.                                               |
+| `tools/evaluate-search.ts`              | Recall@5/MRR calculation and Markdown/JSON evidence.                                                |
+| `tools/validate-links.ts`               | Generated-route crawl plus JavaScript/CSS size budgets.                                             |
+| `tools/update-symbol-index.ts`          | Line-accurate top-level symbol indexes for TypeScript, JavaScript, and Astro.                       |
 
 ## Documentation and generated evidence
 

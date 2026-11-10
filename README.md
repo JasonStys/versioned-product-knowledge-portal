@@ -1,6 +1,7 @@
 # Relay Knowledge Portal
 
 [![CI](https://github.com/JasonStys/versioned-product-knowledge-portal/actions/workflows/ci.yml/badge.svg)](https://github.com/JasonStys/versioned-product-knowledge-portal/actions/workflows/ci.yml)
+[![CodeQL](https://github.com/JasonStys/versioned-product-knowledge-portal/actions/workflows/codeql.yml/badge.svg)](https://github.com/JasonStys/versioned-product-knowledge-portal/actions/workflows/codeql.yml)
 
 A static-first, version-aware product documentation portal built with Astro and strict TypeScript.
 It demonstrates how a knowledge experience can keep product applicability, lifecycle status, source
@@ -120,6 +121,13 @@ bounds, and [latest validation](docs/reports/comparison-2026-11-09.md) for measu
 links, static-asset budgets, and search relevance. GitHub Actions repeats the gate on Node 22 and
 24; a separate Chromium job tests keyboard behavior, mobile reflow, version filtering, and
 detectable WCAG A/AA violations. Reports are retained as workflow artifacts.
+
+The separate [CodeQL workflow](.github/workflows/codeql.yml) analyzes authored JavaScript/TypeScript
+and GitHub Actions with `security-extended` queries on main pushes, pull requests, a weekly
+schedule, and manual requests. It uploads processed findings to GitHub's **Security → Code
+scanning** view. No-build source analysis does not execute the site or certify Astro template
+escaping, content correctness, accessibility, or absence of vulnerabilities; the existing build and
+browser gates remain required. See [scan coverage and review](docs/security-model.md#code-scanning).
 
 ## Repository map
 

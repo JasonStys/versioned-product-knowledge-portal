@@ -93,11 +93,21 @@ describe("repository policy", () => {
   });
 
   it("pins every third-party action to a full commit SHA", async () => {
-    const workflow = await readFile(resolve(ROOT, ".github/workflows/ci.yml"), "utf8");
-    const uses = [...workflow.matchAll(/^\s*uses:\s*([^\s#]+)/gmu)].map((match) => match[1] ?? "");
-    expect(uses.length).toBeGreaterThan(0);
-    expect(uses.every((value) => /@[a-f0-9]{40}$/u.test(value))).toBe(true);
-    expect(workflow).toContain("permissions:\n  contents: read");
+    const directory = resolve(ROOT, ".github/workflows");
+    const workflows = (await readdir(directory)).filter((name) => /\.ya?ml$/u.test(name));
+    expect(workflows.length).toBeGreaterThan(0);
+    for (const name of workflows) {
+      const workflow = await readFile(resolve(directory, name), "utf8");
+      const uses = [...workflow.matchAll(/^\s*uses:\s*([^\s#]+)/gmu)].map(
+        (match) => match[1] ?? "",
+      );
+      expect(uses.length, name).toBeGreaterThan(0);
+      expect(
+        uses.every((value) => /@[a-f0-9]{40}$/u.test(value)),
+        name,
+      ).toBe(true);
+      expect(workflow, name).toContain("permissions:\n  contents: read");
+    }
   });
 
   it("keeps topic IDs and canonical routes unique with complete warnings", async () => {
