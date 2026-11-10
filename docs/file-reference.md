@@ -94,3 +94,14 @@ output are generated; CI retains them as artifacts.
 `playwright.config.ts` uses a dedicated owned preview server and refuses reuse of unknown servers.
 Set `PORTAL_TEST_PORT` (1024..65535) to select an unused local test port without affecting CI
 defaults.
+
+## Reviewed documentation editions
+
+| File                                               | Responsibility                                                                        |
+| -------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| `docs/handbook.md`                                 | Organized current usage, architecture, security and validation documentation.         |
+| `docs/reports/project-guide.docx`                  | Reviewed Word guide bound to the cited source revision.                               |
+| `docs/reports/validation-review.docx`              | Reviewed Word validation edition with exact source and analysis observations.         |
+| `docs/reports/validation-evidence.xlsx`            | Reviewed Excel workflow and test-source Tables, filters and recalculated summaries.   |
+| `docs/reports/publications.json`                   | Exact Office byte identities, approved visual scopes and immutable evidence baseline. |
+| `docs/reports/documentation-refresh-2026-11-09.md` | Dated documentation integration checks and interpretation limits.                     |
