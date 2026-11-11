@@ -105,3 +105,32 @@ defaults.
 | `docs/reports/validation-evidence.xlsx`            | Reviewed Excel workflow and test-source Tables, filters and recalculated summaries.   |
 | `docs/reports/publications.json`                   | Exact Office byte identities, approved visual scopes and immutable evidence baseline. |
 | `docs/reports/documentation-refresh-2026-11-09.md` | Dated documentation integration checks and interpretation limits.                     |
+
+## Native catalog authoring (0.2.0)
+
+| File                                                 | Purpose                                                                                                                          |
+| ---------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| `src/lib/workspace.ts`                               | Closed bounded catalog validation, transactional edits, lifecycle synchronization, clone and canonical serialization.            |
+| `src/pages/workbench/index.astro`                    | Real product/topic/edition, preview, search/compare and history/help controls.                                                   |
+| `src/scripts/workbench.ts`                           | Typed controls with original engines, text-only rendering, explicit native bridge and unapplied-edit protection.                 |
+| `desktop/files.cjs`                                  | Local path admission, same-descriptor bounded ordinary-file reads and exclusive new exports.                                     |
+| `desktop/state.cjs`                                  | Closed profile ownership, bounded directory/browser admission, immutable revisions, CAS pointer commits and retained history.    |
+| `desktop/protocol.cjs`                               | Fixed hashed public/core/owner inventory and secure custom-origin resource responses.                                            |
+| `desktop/preload.cjs`                                | Closed catalog-only IPC surface without arbitrary paths, events or Node exposure.                                                |
+| `desktop/main.mjs`                                   | One window, explicit main-owned dialogs, sandbox/origin boundary and completion-aware Quit.                                      |
+| `desktop/package.json` / `desktop/package-lock.json` | Exact isolated Electron/build/consumer tools; no user runtime setup is required.                                                 |
+| `tools/package-native.mjs`                           | Exact-source original Astro/core staging, notices, original icon, unsigned portable ZIP and checksum.                            |
+| `desktop/tests/native-acceptance.mjs`                | Actual visible two-launch portable consumer with real store/exports and retained pending-dialog Quit.                            |
+| `tests/unit/workspace.test.ts`                       | Original corpus through authoring, applicability, warning, identity and input-boundary scenarios.                                |
+| `tests/unit/native-state.test.ts`                    | Real immutable files, stale/failed commits, history caps and pre-init alias/oversized-directory refusals.                        |
+| `tests/unit/native-protocol.test.ts`                 | Actual resource hashes, fixed versioned routes and foreign/private/method/tamper refusals.                                       |
+| `tests/unit/native-policy.test.ts`                   | Actual workflow YAML authority, extracted-consumer and small-upload checks with independently corrupted negative configurations. |
+| `tests/e2e/workspace.spec.ts`                        | Real public preview controls, explicit temporary scope, retrieval and accessible narrow reflow.                                  |
+| `.github/workflows/native-windows.yml`               | Mandatory exact-source ZIP/extraction/compiled-consumer gate with read-only permissions and small evidence only.                 |
+| `docs/native-application.md`                         | Native user steps, storage/recovery, bounds, threat scope and package reproduction.                                              |
+| `docs/reports/native-workspace-2026-11-11.md`        | Dated observed local evidence, limits and required later hosted verification.                                                    |
+
+`desktop/tests/payload.cjs` reuses the same-descriptor reader for bounded before/after portable
+integrity observations. `tests/unit/payload-hashes.test.ts` exercises real replacement
+interleavings, links, exact byte hashes and budget failures; it does not claim an atomic directory
+snapshot.

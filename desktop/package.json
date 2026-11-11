@@ -1,0 +1,17 @@
+{
+  "name": "versioned-product-knowledge-portal-native",
+  "version": "0.2.0",
+  "private": true,
+  "author": "Jason Stys",
+  "license": "MIT",
+  "description": "Owner-local authoring, edition comparison and search with durable catalog revisions",
+  "main": "main.mjs",
+  "devDependencies": {
+    "@playwright/test": "1.64.1",
+    "electron": "44.11.1",
+    "electron-builder": "26.18.0"
+  },
+  "overrides": {
+    "minimatch@>=7 <11.0.1": "11.0.1"
+  }
+}

@@ -77,3 +77,27 @@ warning absence without risk inference, reversed comparisons, retired/missing to
 non-allowlisted options, no-JavaScript static behavior, unique anchors, reflow and axe checks.
 `PORTAL_TEST_PORT=44361 pnpm test:e2e` selects an owned test-only port; servers are never reused.
 See [latest evidence](reports/comparison-2026-11-09.md).
+
+## Native workspace validation
+
+The original Node 22/24, strict types/lint, coverage floors, static links/asset budgets, 50-query
+search evaluation and browser gates remain. New unit cases use the actual original corpus through
+catalog edits, promotion/retirement/clone, duplicate keys/identities, complete warnings, byte/depth/
+comparison bounds and literal source data. Real filesystem cases exercise revision bytes, stale
+queued saves, atomic-pointer failure, retained restore/restart, actual NTFS hardlinks, ordinary
+browser recovery files, oversized directories before byte reads and no-overwrite exports.
+
+The read-only `Native Windows` workflow installs its own exact desktop lock, audits the full graph,
+builds an unsigned portable ZIP from clean event source, verifies its sidecar, extracts it into a
+fresh directory and drives the same visible compiled app twice. The consumer exercises actual
+search/abstention, version clone and warning comparison, custom imports and authoring, saved
+exports, invalid input/overwrite/cancel boundaries, history restore, restart, narrow/Axe checks and
+repeated Quit during an accepted real file choice. Whole portable payload hashes are compared
+before/after. Only small synthetic receipts/screenshots are uploaded for three days; no
+package/profile/cache upload is added by the new workflow. Hosted status must be observed
+independently for the exact commit; local results do not imply a future hosted pass.
+
+See [native reproduction](native-application.md#reproduce-the-native-acceptance) and the
+[dated report](reports/native-workspace-2026-11-11.md). The original browser route is a temporary
+preview and has explicit no-native-persistence tests. It is not an authentication or production
+multiuser test, and the native package has not thereby been certified on a clean Windows machine.

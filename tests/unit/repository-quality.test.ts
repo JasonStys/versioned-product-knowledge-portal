@@ -6,9 +6,9 @@
  * - variable ROOT: line 22
  * - variable CODE_EXTENSIONS: line 23
  * - variable EXCLUDED_DIRECTORIES: line 24
- * - variable REQUIRED_DOCUMENTS: line 32
- * - variable FORBIDDEN_REFERENCE: line 46
- * - function walk: line 49
+ * - variable REQUIRED_DOCUMENTS: line 34
+ * - variable FORBIDDEN_REFERENCE: line 48
+ * - function walk: line 51
  * @@SYMBOL_INDEX_END
  */
 
@@ -20,7 +20,7 @@ import { LEGACY_REDIRECTS } from "../../src/lib/redirects";
 import { loadTopics } from "../../tools/load-topics";
 
 const ROOT = resolve(import.meta.dirname, "../..");
-const CODE_EXTENSIONS = new Set([".ts", ".mjs", ".astro"]);
+const CODE_EXTENSIONS = new Set([".ts", ".mjs", ".cjs", ".astro"]);
 const EXCLUDED_DIRECTORIES = new Set([
   ".astro",
   ".git",
@@ -28,6 +28,8 @@ const EXCLUDED_DIRECTORIES = new Set([
   "dist",
   "node_modules",
   "reports",
+  ".runtime",
+  "release",
 ]);
 const REQUIRED_DOCUMENTS = [
   "README.md",
@@ -63,7 +65,9 @@ async function walk(directory: string): Promise<readonly string[]> {
 describe("repository policy", () => {
   it("contains no target-company references", async () => {
     const textFiles = (await walk(ROOT)).filter((path) =>
-      [".ts", ".mjs", ".astro", ".css", ".md", ".json", ".yml", ".yaml"].includes(extname(path)),
+      [".ts", ".mjs", ".cjs", ".astro", ".css", ".md", ".json", ".yml", ".yaml"].includes(
+        extname(path),
+      ),
     );
     for (const path of textFiles) {
       const text = await readFile(path, "utf8");

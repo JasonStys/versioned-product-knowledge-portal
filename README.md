@@ -7,8 +7,69 @@ A static-first, version-aware product documentation portal built with Astro and 
 It demonstrates how a knowledge experience can keep product applicability, lifecycle status, source
 evidence, accessible presentation, and measured search quality attached to every answer.
 
+Version 0.2.0 also provides an owner-local graphical **Catalog workspace**. Maintain a product and
+edition catalog, author structured topics, preview complete warnings, clone an edition, search and
+compare the actual draft, import a validated JSON catalog, and retain immutable local revisions.
+Restore appends a revision; saved JSON and inert HTML exports never overwrite existing files. The
+original static reader, canonical routes, no-JavaScript comparison pages and 50-query search
+evaluation remain available. This is the real application with editable starter scenarios, not a
+separate demonstration viewer.
+
 All products, identifiers, procedures, and source records are synthetic. This repository is an
 independent portfolio project and is not operating guidance for real equipment.
+
+## Graphical application and local authoring
+
+The Windows x64 portable build includes its runtime, original project engines, complete interface,
+an original book icon and dependency notices. Extract the **complete** archive and launch
+`KnowledgePortal.exe`; an end user needs neither Node.js nor an IDE. This is an unsigned portable
+application, not an NSIS installer, a publisher-certified binary or a native mobile application.
+Source development and package construction still require the tools below. A release asset is
+available only after a separately reviewed publication; the build command does not publish one.
+
+1. In **Catalog & authoring**, select Apex Control Hub. Enter edition `2.1`, choose **Current**, a
+   real release date and **Copy topics from 2.0**. Apply the edition. The former current edition is
+   maintained and its old text stays intact.
+2. Select the copied E-104 topic. Edit its title and structured JSON, including an entire warning's
+   condition, consequence and avoidance. **Validate & apply topic** updates the draft and exact
+   preview. Unapplied fields cannot silently become a saved revision.
+3. Use **Search & compare** with explicit product/edition filters. Retrieval and extractive
+   abstention use the original engine; comparison retains both sources and labels missing content.
+4. **Save revision** commits the entire catalog. Importing a file changes only the draft until you
+   save it. **History & help** restores an earlier revision by adding a new one. Exports use the
+   last saved catalog, not an unapplied form or unsaved draft.
+5. **Exit application** confirms unsaved changes and waits for accepted save/export work and file
+   choices. Canceling an import/export or Exit makes no saved changes. Repeated Exit cannot detach
+   an unfinished accepted export.
+
+The normal workspace is outside the installation at
+`%LOCALAPPDATA%\JasonStysPortfolio\versioned-product-knowledge-portal\workspace`. A source developer
+can choose a separate absolute local directory with `--profile PATH`. Unknown files, aliases, stale
+ownership or corrupt revisions are preserved and refused rather than adopted or reset. The browser
+route `/workbench/` clearly identifies itself as a **temporary preview**; it does not claim native
+persistence. Native header navigation selects the current workspace's panels so an edited catalog
+cannot silently switch to the bundled starter reader.
+
+Catalogs are plaintext for one trusted OS owner, with no login, encryption, remote publishing or
+equipment connection. Visibility `public` is publication metadata; nothing is automatically
+uploaded. Provenance fields are supplied assertions and local hashes provide integrity, not
+authentication. See [native operation and recovery](docs/native-application.md),
+[security boundaries](docs/security-model.md) and the
+[dated validation report](docs/reports/native-workspace-2026-11-11.md).
+
+Build a new portable package after installing both exact locks:
+
+```powershell
+pnpm install --frozen-lockfile
+npm ci --ignore-scripts --prefix desktop
+node desktop/node_modules/electron/install.js
+pnpm validate
+node tools/package-native.mjs release/local-020
+```
+
+The builder requires clean exact source. An explicit local `--allow-dirty` candidate is labeled as
+such and is refused in hosted Actions. The archive and SHA256 sidecar are written under the fresh
+output; no installed application, shortcut or ordinary profile is modified by building.
 
 ## 60-second quick start
 

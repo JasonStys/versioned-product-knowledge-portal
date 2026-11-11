@@ -4,8 +4,9 @@
 
 The portal must publish product knowledge that remains correct as products and software versions
 change. It optimizes for static public delivery, inspectable retrieval, accessibility, stable URLs,
-and evidence that can be reviewed in a pull request. It does not implement private content, device
-commands, or a generative answer service.
+and evidence that can be reviewed in a pull request. Its original public reader does not implement
+private hosting, device commands or a generative answer service. The native authoring workspace adds
+owner-local plaintext catalog revisions without changing that public-reader boundary.
 
 ## Data flow
 
@@ -88,3 +89,22 @@ Astro renders each source edition separately at build time, including complete n
 provenance; browser code only chooses an allowlisted prebuilt route. This adds no backend or
 private-content access assumptions, and does not change extractive search/abstention. See
 [edition comparison](edition-comparison.md) for complexity, limits and interpretation.
+
+## Owner-local graphical authoring
+
+`src/lib/workspace.ts` applies the original topic/product contract to complete editable catalogs,
+with bounded closed data, real dates, duplicate-key/route/identity checks and the original
+comparison budget. `src/scripts/workbench.ts` uses those transformations and the unchanged
+search/comparison engines. Imports are draft-only, edits preserve stable identities, edition
+promotion preserves old content, and exports are explicitly saved-catalog exports.
+
+The native main process owns dialogs and serialized compare-and-swap revision commits. The renderer
+has a narrow preload interface, not Node or path access. `desktop/state.cjs` admits a closed bounded
+profile, persists immutable catalog records and atomically replaces only the current pointer.
+Restoring creates a new record. The pointer protocol is not an all-files filesystem transaction or
+power-failure guarantee. Its normal restart contract and failed replacement preservation are tested.
+
+The fixed custom origin serves verified in-memory public resources. No HTTP service, remote account,
+provider or device is launched. Native links select current-catalog panels; the original static
+reader remains available from the source/site build. See [native operation](native-application.md)
+for exact limits, recovery, packaging and trusted-OS-owner scope.

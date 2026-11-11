@@ -4,3 +4,6 @@ dist/
 node_modules/
 reports/
 pnpm-lock.yaml
+.runtime/
+release/
+desktop/package-lock.json
