@@ -27,7 +27,8 @@
     "update:headers": "tsx tools/update-symbol-index.ts",
     "validate": "pnpm format:check && pnpm validate:headers && pnpm lint && pnpm typecheck && pnpm test:coverage && pnpm build && pnpm validate:links && pnpm evaluate:search",
     "native:build": "node tools/package-native.mjs",
-    "native:test": "node desktop/tests/native-acceptance.mjs"
+    "native:test": "node desktop/tests/native-acceptance.mjs",
+    "native:test:startup": "node desktop/tests/fatal-startup.mjs"
   },
   "dependencies": {
     "astro": "7.3.8"

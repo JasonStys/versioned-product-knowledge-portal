@@ -6,7 +6,7 @@
  * - function actionName: line 21
  * - function workflow: line 25
  * - function policy: line 30
- * - variable source: line 101
+ * - variable source: line 103
  * @@SYMBOL_INDEX_END
  */
 import fs from "node:fs";
@@ -59,6 +59,7 @@ function policy(text: string) {
     "pnpm test",
     "npm audit --prefix desktop --audit-level moderate",
     "node tools/package-native.mjs release/ci-portable",
+    "node desktop/tests/fatal-startup.mjs .runtime/ci-startup-exits release/ci-portable/win-unpacked/resources/catalog",
     "Get-FileHash -LiteralPath $archive -Algorithm SHA256",
     "$sidecar -cne",
     "Expand-Archive -LiteralPath $archive -DestinationPath '.runtime/relocated-portable'",
@@ -94,6 +95,7 @@ function policy(text: string) {
         ".runtime/ci-acceptance/acceptance.json",
         ".runtime/ci-acceptance/failure.json",
         ".runtime/ci-acceptance/native-*.png",
+        ".runtime/ci-startup-exits/acceptance.json",
       ].join("\n")
   )
     throw new Error("Unexpected native upload.");
@@ -108,6 +110,11 @@ describe("actual native workflow", () => {
     ["wrong source event", "pull_request:", "pull_request_target:"],
     ["omitted original unit gate", "run: pnpm test", "run: echo skipped"],
     ["omitted audit", "npm audit --prefix desktop --audit-level moderate", "echo no-audit"],
+    [
+      "omitted actual fatal status regression",
+      "node desktop/tests/fatal-startup.mjs",
+      "node desktop/tests/omitted-regression.mjs",
+    ],
     [
       "dirty release candidate",
       "node tools/package-native.mjs release/ci-portable",

@@ -55,7 +55,10 @@ equipment connection. Visibility `public` is publication metadata; nothing is au
 uploaded. Provenance fields are supplied assertions and local hashes provide integrity, not
 authentication. See [native operation and recovery](docs/native-application.md),
 [security boundaries](docs/security-model.md) and the
-[dated validation report](docs/reports/native-workspace-2026-11-11.md).
+[dated validation report](docs/reports/native-workspace-2026-11-11.md). Fatal startup now reports
+failure only after accepted work and workspace release settle; the
+[actual exit-status regression](docs/reports/native-startup-status-2026-11-11.md) retains a normal
+successful Quit control and the original 30-second readiness deadline.
 
 Build a new portable package after installing both exact locks:
 

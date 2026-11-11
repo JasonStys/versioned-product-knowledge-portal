@@ -103,3 +103,22 @@ Primary design references:
 [Electron security](https://www.electronjs.org/docs/latest/tutorial/security),
 [custom protocol](https://www.electronjs.org/docs/latest/api/protocol) and
 [application lifecycle](https://www.electronjs.org/docs/latest/api/app).
+
+Fatal startup is reported separately from normal Quit. If fixed resources, workspace ownership or
+renderer readiness cannot be admitted, the app stops further work, settles already accepted
+operations and workspace closing, then explicitly exits with status 1. A conflicting owner's token
+and saved revisions are preserved. Normal Quit still follows its original completion-aware window
+and ownership path and exits 0. See the
+[actual failure/control measurements](reports/native-startup-status-2026-11-11.md).
+
+The mandatory Windows gate also runs these real source-main Electron regressions using core bytes
+from its newly built package:
+
+```powershell
+node desktop/tests/fatal-startup.mjs .runtime/startup-status-check release/local-020/win-unpacked/resources/catalog
+```
+
+Four failures and a successful saved-work/normal-exit control run in separate fresh synthetic
+profiles. Only the modal error display is replaced. The production resource readers, profile,
+catalogue, IPC, filesystem and exit APIs remain real. The readiness-timeout case retains the actual
+30-second timer; this regression does not replace the full compiled fourteen-case user journey.
