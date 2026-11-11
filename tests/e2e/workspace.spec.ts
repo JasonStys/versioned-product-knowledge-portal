@@ -58,3 +58,36 @@ test("workspace controls, long hashes and navigation reflow accessibly", async (
     }
   }
 });
+
+test("opening a search result requires an explicit choice before discarding unapplied fields", async ({
+  page,
+}) => {
+  await page.goto("/workbench/");
+  await expect(page.locator("#workspace-status")).toContainText("browser preview only");
+  await page.locator("#topic-title").fill("Keep my unapplied source review");
+  await page.getByRole("button", { name: "Search & compare", exact: true }).click();
+  await page.locator("#workspace-query").fill("E-104");
+  await page.locator("#search-product").selectOption("apex-control-hub");
+  await page.locator("#search-version").selectOption("2.0");
+  await page.getByRole("button", { name: "Search catalog", exact: true }).click();
+  const result = page.getByRole("button", {
+    name: "Apex Control Hub 2.0 · Resolve diagnostic E-104",
+    exact: true,
+  });
+  await expect(result).toBeVisible();
+  page.once("dialog", async (dialog) => {
+    expect(dialog.message()).toBe("Discard unapplied editor fields and open this search result?");
+    await dialog.dismiss();
+  });
+  await result.click();
+  await expect(page.locator("#research")).toBeVisible();
+  await expect(page.locator("#topic-title")).toHaveValue("Keep my unapplied source review");
+  page.once("dialog", async (dialog) => {
+    expect(dialog.message()).toBe("Discard unapplied editor fields and open this search result?");
+    await dialog.accept();
+  });
+  await result.click();
+  await expect(page.locator("#authoring")).toBeVisible();
+  await expect(page.locator("#topic-title")).toHaveValue("Resolve diagnostic E-104");
+  await expect(page.locator("#topic-select")).toHaveValue("apex-2-0-e104");
+});

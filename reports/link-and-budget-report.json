@@ -5,7 +5,7 @@
   "broken": [],
   "budgets": {
     "scriptBytes": {
-      "actual": 30392,
+      "actual": 30731,
       "maximum": 102400
     },
     "styleBytes": {

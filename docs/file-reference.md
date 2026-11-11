@@ -129,3 +129,8 @@ defaults.
 | `.github/workflows/native-windows.yml`               | Mandatory exact-source ZIP/extraction/compiled-consumer gate with read-only permissions and small evidence only.                 |
 | `docs/native-application.md`                         | Native user steps, storage/recovery, bounds, threat scope and package reproduction.                                              |
 | `docs/reports/native-workspace-2026-11-11.md`        | Dated observed local evidence, limits and required later hosted verification.                                                    |
+
+`desktop/tests/payload.cjs` reuses the same-descriptor reader for bounded before/after portable
+integrity observations. `tests/unit/payload-hashes.test.ts` exercises real replacement
+interleavings, links, exact byte hashes and budget failures; it does not claim an atomic directory
+snapshot.

@@ -31,13 +31,13 @@ Restore creates a new revision. Unknown/corrupt/incomplete state is preserved, n
 
 | Gate | Observed result |
 | --- | --- |
-| Original and new unit cases | 183 passed, including real file transactions, native origin/resource controls and actual-workflow negative mutations. |
+| Original and new unit cases | 191 passed, including real file transactions, native origin/resource controls and actual-workflow negative mutations. |
 | Original library coverage scope | 348/350 lines (99.42%), 329/335 branches (98.20%), 90/91 functions (98.90%). No new exclusion or lower floor. Native CJS/UI are additionally exercised by dedicated real file/native journeys; these percentages do not describe the entire packaged binary. |
 | Strict Astro/TypeScript and lint | No type errors/warnings/hints; existing type-aware source rules retained. The new Electron CommonJS files use their actual module format with syntax/recommended checks and generated indexes. |
-| Original plus new browser journeys | All 36 desktop/mobile Chromium cases passed. Original keyboard, no-JavaScript comparison, applicability/warning, query, reflow and accessibility oracles remain. Four added executions cover real browser authoring/retrieval and explicit temporary scope/reflow. |
-| Static build, links and original asset budgets | All 69 pages passed link validation. JavaScript was 30,392 bytes of the unchanged 102,400-byte budget; CSS was 10,234 of 40,960 bytes. |
+| Original plus new browser journeys | All 38 desktop/mobile Chromium cases passed. Original keyboard, no-JavaScript comparison, applicability/warning, query, reflow and accessibility oracles remain. Six added executions cover real authoring/retrieval, temporary scope/reflow and explicit keep/discard decisions for unapplied fields when opening search results. |
+| Static build, links and original asset budgets | All 69 pages passed link validation. JavaScript was 30,731 bytes of the unchanged 102,400-byte budget; CSS was 10,234 of 40,960 bytes. |
 | Original judged retrieval | All 50 judgments passed; Recall@5 was 100% (96% floor), MRR 0.985 (0.90 floor). These measure only the original synthetic corpus. |
-| Actual ZIP-extracted Windows application | All 13 user-workflow checks passed in two visible launches of the actual relocated EXE, with normal process exits `[0, 0]`. All 165 portable payload files were byte-identical before/after. |
+| Actual ZIP-extracted Windows application | All 14 user-workflow checks passed in two visible launches of the actual relocated EXE, with normal process exits `[0, 0]`. All 165 portable payload files were byte-identical before/after. The additional real held-pointer-save case checks disabled edits, preserved selection and unchanged prior pointer until the same write completes. |
 | Actual native accessibility | The same native document passed the pinned axe-core WCAG A/AA rule tags with zero violations/incomplete checks; 25 checks passed. Native navigation and long hashes remained within 320/390 viewports. Automated checks do not establish full conformance. |
 | Dependency review | Full source and full isolated desktop npm graphs had zero reported advisories at observation. No ignore or security-gate removal. |
 
@@ -55,6 +55,9 @@ filesystem operations or application endpoints. Its actual scenarios include:
    cancel dirty Exit without losing editor fields.
 7. Hold an actual accepted export choice, request Exit repeatedly, observe the same visible window
    and live owner lock, then complete that choice and observe normal exit and exact saved export.
+8. Hold the real current-pointer rename during a save. Inputs, selections and actions remain
+   disabled while Exit stays available; attempted keyboard input cannot change accepted fields.
+   Release that same write and verify the returned persisted values and selection.
 
 Additional file tests refuse actual NTFS hardlinks in fixed files/browser sidecars, directories in
 fixed slots, malformed UTF-8, stale/unknown revisions and oversized directories before byte reads.
@@ -63,6 +66,22 @@ old pointer, new complete record and temporary evidence rather than adopting an 
 Fifty real flushed revisions exercise the retention boundary without deleting earlier history.
 
 ## Issues actually found during validation
+
+- The first hosted PR CodeQL analysis completed successfully but its actual JavaScript SARIF
+  contained one `js/file-system-race` result in the portable consumer's integrity reader, not the
+  application input/store reader. Earlier pathname metadata sized a later file open. The consumer
+  now reuses the application's descriptor-first bounded reader. Eight independent real-file cases
+  cover before-open replacement, after-open identity mismatch, hardlinks, directory aliases, byte
+  and entry limits, exact known hashes and non-relaxable production caps. The original finding and
+  first analysis are retained as historical evidence; clearance requires the new processed analysis,
+  not a green job or a dismissal.
+
+- Independent review found two actual unapplied-editor loss paths. Inputs and selections were
+  editable while an asynchronous save waited; the returned snapshot could overwrite intervening
+  fields. Controls now stay disabled until that operation finishes, and closing cannot re-enable
+  them. The compiled consumer holds the real pointer rename to exercise this boundary. Opening a
+  search result also cleared unapplied fields without a choice; the same explicit keep/discard
+  confirmation now applies, with real desktop/mobile browser negatives that preserve the typed text.
 
 - The first accessibility wrapper attempted an auxiliary `Target.createTarget` unsupported by
   Electron. Its failure was retained, not reclassified as an accessibility pass. The test transport
