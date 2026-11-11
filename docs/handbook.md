@@ -12,7 +12,16 @@ lifecycle/missing counterparts and an allowlisted no-JavaScript-friendly chooser
 Helps readers compare applicable instructions without merging incompatible procedures or assuming an
 absent warning means safety.
 
-## Read the documentation
+## Current installed application guide
+
+The [Windows 0.2.0 illustrated guide](reports/windows-application-guide-0.2.0.docx) covers actual
+installed authoring, source-cited comparison, local history/export and graceful Exit. Its
+[installed validation](reports/installed-windows-0.2.0-2026-11-11.md) and
+[identity manifest](reports/windows-application-guide-0.2.0.json) record exact runtime source,
+observations and limits. The editions below are preserved historical documentation with their own
+baselines; they do not replace the current native guide.
+
+## Read the historical documentation
 
 | Edition                                                      | Audience and contents                                                                                              |
 | ------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |

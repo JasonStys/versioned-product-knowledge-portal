@@ -137,3 +137,11 @@ defaults.
 integrity observations. `tests/unit/payload-hashes.test.ts` exercises real replacement
 interleavings, links, exact byte hashes and budget failures; it does not claim an atomic directory
 snapshot.
+
+## Installed Windows documentation edition
+
+| File                                                 | Purpose                                                                                                                             |
+| ---------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| `docs/reports/windows-application-guide-0.2.0.docx`  | Four-page installed application guide with actual interface figures, worked workflow, immutable source excerpt and explicit limits. |
+| `docs/reports/windows-application-guide-0.2.0.json`  | Exact Word, screenshot, source and individually reviewed rendered-page hashes; sanitized public scope.                              |
+| `docs/reports/installed-windows-0.2.0-2026-11-11.md` | Dated independent installed, distribution, startup and full-main validation observations.                                           |

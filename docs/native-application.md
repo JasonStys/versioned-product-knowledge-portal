@@ -6,6 +6,15 @@ edition dates/lifecycle, topic sections, ordered steps, literal code, complete w
 provenance are validated as one catalog. The public static reader remains a separate build-time
 publication.
 
+## Installed Windows guide
+
+Use the [current illustrated guide](reports/windows-application-guide-0.2.0.docx) for the complete
+Windows ZIP launch, authoring, cited comparison, revision/export and Exit workflow. Its
+[installed validation](reports/installed-windows-0.2.0-2026-11-11.md) distinguishes the actual
+installed consumer from targeted source-main startup failures and untested ordinary-profile shortcut
+activation. The [review manifest](reports/windows-application-guide-0.2.0.json) binds actual
+screenshots and the immutable runtime source. Earlier validation reports remain dated.
+
 ## Working with a catalog
 
 The first workspace contains the original 12 synthetic topics. These are editable inputs within the

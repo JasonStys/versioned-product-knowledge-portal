@@ -12,9 +12,9 @@ interaction, keyboard behavior, responsive reflow, and automated accessibility r
 | Citation and abstention                        | Unit + browser         | Version-correct citations; unrelated questions abstain.                    |
 | Content schema and warnings                    | Astro build + policy   | Invalid fields or incomplete warnings block publication.                   |
 | URLs and redirects                             | Unit + generated crawl | Unique routes, local redirects, no broken internal targets.                |
-| Search relevance                               | Offline evaluation     | 50 judgments; Recall@5 ≥ 96%; MRR ≥ 0.90.                                  |
+| Search relevance                               | Offline evaluation     | 50 judgments; Recall@5 â‰¥ 96%; MRR â‰¥ 0.90.                              |
 | Accessibility                                  | Browser + manual plan  | Keyboard skip, reflow, labels, warning structure, axe A/AA scan.           |
-| Performance                                    | Static budget          | Total browser JS ≤ 100 KiB; CSS ≤ 40 KiB.                                  |
+| Performance                                    | Static budget          | Total browser JS â‰¤ 100 KiB; CSS â‰¤ 40 KiB.                              |
 | Supply chain                                   | CI policy + audit      | Locked packages, release-age policy, SHA-pinned actions, production audit. |
 
 ## Commands
@@ -116,3 +116,14 @@ Local source validation for this correction passed 192 unit cases, 38 browser ca
 and lint, all 69 built HTML files and the unchanged 50-query search evaluation. V8 coverage was
 99.22% statements, 98.20% branches, 98.90% functions and 99.42% lines; the existing floors were not
 changed. These source results do not imply a hosted scan or future download/install pass.
+
+## Published installed application evidence
+
+The [current installed report](reports/installed-windows-0.2.0-2026-11-11.md) records exact runtime
+source, published download identities, fourteen actual installed workflows, two normal exits and
+unchanged 165-file inventory. A separate installed capture completed another normal exit. The
+[four-page Word guide](reports/windows-application-guide-0.2.0.docx) passed saved OOXML validation
+and individual visual review of every rendered page; its
+[manifest](reports/windows-application-guide-0.2.0.json) binds those exact bytes and images. These
+document checks do not replace original source, hosted security or compiled-user gates, and do not
+certify the ordinary default-profile Desktop launch.
