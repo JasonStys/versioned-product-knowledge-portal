@@ -12,7 +12,15 @@ import tseslint from "typescript-eslint";
 
 export default tseslint.config(
   {
-    ignores: [".astro/**", "dist/**", "coverage/**", "reports/**", "eslint.config.mjs"],
+    ignores: [
+      ".astro/**",
+      "dist/**",
+      "coverage/**",
+      "reports/**",
+      "eslint.config.mjs",
+      ".runtime/**",
+      "release/**",
+    ],
   },
   eslint.configs.recommended,
   ...tseslint.configs.strictTypeChecked,
@@ -28,6 +36,28 @@ export default tseslint.config(
       "@typescript-eslint/consistent-type-imports": "error",
       "@typescript-eslint/no-confusing-void-expression": "off",
       "@typescript-eslint/restrict-template-expressions": ["error", { allowNumber: true }],
+    },
+  },
+  {
+    files: ["desktop/**/*.cjs", "desktop/**/*.mjs", "tools/package-native.mjs"],
+    extends: [tseslint.configs.disableTypeChecked],
+    rules: { "@typescript-eslint/no-require-imports": "off" },
+    languageOptions: {
+      parserOptions: { project: false, projectService: false },
+      globals: {
+        require: "readonly",
+        module: "readonly",
+        process: "readonly",
+        Buffer: "readonly",
+        TextDecoder: "readonly",
+        Response: "readonly",
+        URL: "readonly",
+        structuredClone: "readonly",
+        setTimeout: "readonly",
+        setImmediate: "readonly",
+        clearTimeout: "readonly",
+        console: "readonly",
+      },
     },
   },
 );

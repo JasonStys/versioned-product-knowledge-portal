@@ -8,13 +8,13 @@
  * - variable END: line 27
  * - variable SOURCE_EXTENSIONS: line 28
  * - variable SKIPPED_DIRECTORIES: line 29
- * - interface ParsedSource: line 38
- * - function parseSource: line 44
- * - function symbolLabel: line 70
- * - function symbolRows: line 95
- * - function transform: line 109
- * - function sourceFiles: line 130
- * - function main: line 148
+ * - interface ParsedSource: line 40
+ * - function parseSource: line 46
+ * - function symbolLabel: line 74
+ * - function symbolRows: line 99
+ * - function transform: line 113
+ * - function sourceFiles: line 134
+ * - function main: line 152
  * @@SYMBOL_INDEX_END
  */
 
@@ -25,7 +25,7 @@ import ts from "typescript";
 const ROOT = resolve(import.meta.dirname, "..");
 const START = "@@SYMBOL_INDEX_START";
 const END = "@@SYMBOL_INDEX_END";
-const SOURCE_EXTENSIONS = new Set([".ts", ".mjs", ".astro"]);
+const SOURCE_EXTENSIONS = new Set([".ts", ".mjs", ".cjs", ".astro"]);
 const SKIPPED_DIRECTORIES = new Set([
   ".astro",
   ".git",
@@ -33,6 +33,8 @@ const SKIPPED_DIRECTORIES = new Set([
   "dist",
   "node_modules",
   "reports",
+  ".runtime",
+  "release",
 ]);
 
 interface ParsedSource {
@@ -59,7 +61,9 @@ function parseSource(path: string, text: string): ParsedSource {
       lineOffset: 1,
     };
   }
-  const scriptKind = path.endsWith(".mjs") ? ts.ScriptKind.JS : ts.ScriptKind.TS;
+  const scriptKind = [".mjs", ".cjs"].some((extension) => path.endsWith(extension))
+    ? ts.ScriptKind.JS
+    : ts.ScriptKind.TS;
   return {
     source: ts.createSourceFile(path, text, ts.ScriptTarget.Latest, true, scriptKind),
     lineOffset: 0,

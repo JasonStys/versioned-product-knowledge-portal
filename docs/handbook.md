@@ -76,3 +76,11 @@ and workbook tab before replacing an edition; verify the exact binary digests an
 publications.json. Keep account data, logs with secrets, installed-app state and private test stores
 out of documentation. Source and release assets retain their existing security and licensing
 boundaries.
+
+## Native catalog authoring (0.2.0)
+
+Use the [native application guide](native-application.md) for product/topic editing, edition
+lifecycle, draft search/comparison, explicit imports/exports, revision restore and owner-local
+recovery. The [dated native validation report](reports/native-workspace-2026-11-11.md) distinguishes
+actual local measurements from later hosted/publication evidence. Existing Office publications
+remain dated snapshots; they have not been relabeled as native installation evidence.

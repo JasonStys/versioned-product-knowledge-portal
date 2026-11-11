@@ -55,3 +55,25 @@ workflow.
 Follow [SECURITY.md](../SECURITY.md). Preserve evidence, remove public exposure only when necessary,
 rotate any affected credential, patch the smallest boundary, add a regression test, and publish
 impact and supported versions.
+
+## Native authoring boundary (0.2.0)
+
+The original static/public-content assumptions apply to the published reader. Native catalogs are
+instead plaintext for a single trusted operating-system owner, stored outside installation/source.
+There is no login, encrypted vault, developer access account or automatic publishing. The supplied
+`visibility: public` topic field denotes publication intent; it does not upload a local catalog.
+
+A closed IPC bridge admits only the sole verified main frame, complete validated catalogs and
+bounded revision identities. Main-owned dialogs select import/export files. Descriptor-bounded
+ordinary-file reads refuse static links and malformed UTF-8; new-file creation does not overwrite.
+Before initialization the fixed workspace and bounded Chromium tree reject static aliases, including
+SQLite sidecars. Unknown/stale/corrupt state is preserved rather than reset. Same-owner concurrent
+namespace attacks, administrator access and machine failure are outside this model.
+
+All imported text is data, never HTML or a loaded script. The native renderer has sandboxing,
+context isolation, no Node integration, no permissions, no outside navigation/windows/downloads, and
+a fixed resource-map protocol. Exported HTML escapes fields and disallows active content. Package
+metadata and revision hashes provide integrity/source binding, not authentication or code signing.
+Accepted real file work retains its owner on repeated Quit. See the
+[native guide](native-application.md) and source/native regression tests for the exercised boundary
+and its limits.

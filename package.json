@@ -1,6 +1,6 @@
 {
   "name": "versioned-product-knowledge-portal",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Static-first product documentation portal with version-aware search and evidence-backed answers.",
   "type": "module",
   "private": true,
@@ -25,7 +25,9 @@
     "validate:links": "tsx tools/validate-links.ts",
     "validate:headers": "tsx tools/update-symbol-index.ts --check",
     "update:headers": "tsx tools/update-symbol-index.ts",
-    "validate": "pnpm format:check && pnpm validate:headers && pnpm lint && pnpm typecheck && pnpm test:coverage && pnpm build && pnpm validate:links && pnpm evaluate:search"
+    "validate": "pnpm format:check && pnpm validate:headers && pnpm lint && pnpm typecheck && pnpm test:coverage && pnpm build && pnpm validate:links && pnpm evaluate:search",
+    "native:build": "node tools/package-native.mjs",
+    "native:test": "node desktop/tests/native-acceptance.mjs"
   },
   "dependencies": {
     "astro": "7.3.8"
