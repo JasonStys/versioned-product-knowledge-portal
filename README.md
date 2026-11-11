@@ -84,7 +84,7 @@ output; no installed application, shortcut or ordinary profile is modified by bu
 
 ## 60-second quick start
 
-Prerequisites: Node.js 22.19â€“24 and pnpm 11.
+Prerequisites: Node.js 22.19–24 and pnpm 11.
 
 ```bash
 pnpm install --frozen-lockfile
@@ -171,7 +171,7 @@ the local index with a dedicated service.
 
 Exact identifiers such as `E-104` and `REG-40001` receive a separate boost. Query expansion is
 limited to a reviewed synonym map, and product/version filtering happens before scoring. The answer
-mode never invokes a model or toolâ€”it returns a source summary and citations or an explicit
+mode never invokes a model or tool—it returns a source summary and citations or an explicit
 abstention.
 
 ### Version comparison
@@ -196,7 +196,7 @@ detectable WCAG A/AA violations. Reports are retained as workflow artifacts.
 
 The separate [CodeQL workflow](.github/workflows/codeql.yml) analyzes authored JavaScript/TypeScript
 and GitHub Actions with `security-extended` queries on main pushes, pull requests, a weekly
-schedule, and manual requests. It uploads processed findings to GitHub's **Security â†’ Code
+schedule, and manual requests. It uploads processed findings to GitHub's **Security → Code
 scanning** view. No-build source analysis does not execute the site or certify Astro template
 escaping, content correctness, accessibility, or absence of vulnerabilities; the existing build and
 browser gates remain required. See [scan coverage and review](docs/security-model.md#code-scanning).
@@ -250,8 +250,8 @@ The [file reference](docs/file-reference.md) explains every authored or generate
 - The corpus and judgment set are synthetic and small; reported relevance does not generalize to a
   commercial documentation estate.
 - Automated accessibility checks find only a subset of barriers and do not establish conformance.
-- The answer preview is extractiveâ€”not semantic or generativeâ€”and has no authorization layer
-  because the repository contains only public sample content.
+- The answer preview is extractive—not semantic or generative—and has no authorization layer because
+  the repository contains only public sample content.
 - The redirect manifest must be applied by a hosting adapter; static object storage alone cannot
   emit HTTP redirect status codes.
 - No procedure in this demonstration should be used to control or service real equipment.
@@ -268,10 +268,10 @@ Code and synthetic content are available under the [MIT License](LICENSE).
 ## Documentation editions
 
 Start with the [organized handbook](docs/handbook.md) for current usage, design, security and test
-guidance. Reviewed downloadable editions: [project-guide.docx](docs/reports/project-guide.docx) Â·
-[validation-review.docx](docs/reports/validation-review.docx) Â·
+guidance. Reviewed downloadable editions: [project-guide.docx](docs/reports/project-guide.docx) ·
+[validation-review.docx](docs/reports/validation-review.docx) ·
 [validation-evidence.xlsx](docs/reports/validation-evidence.xlsx).
 
-[Publication identities and source scope](docs/reports/publications.json) Â·
+[Publication identities and source scope](docs/reports/publications.json) ·
 [Documentation validation record](docs/reports/documentation-refresh-2026-11-09.md). Historical
 results retain their own tested revision and date.

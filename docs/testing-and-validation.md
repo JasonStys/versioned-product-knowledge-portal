@@ -12,9 +12,9 @@ interaction, keyboard behavior, responsive reflow, and automated accessibility r
 | Citation and abstention                        | Unit + browser         | Version-correct citations; unrelated questions abstain.                    |
 | Content schema and warnings                    | Astro build + policy   | Invalid fields or incomplete warnings block publication.                   |
 | URLs and redirects                             | Unit + generated crawl | Unique routes, local redirects, no broken internal targets.                |
-| Search relevance                               | Offline evaluation     | 50 judgments; Recall@5 â‰¥ 96%; MRR â‰¥ 0.90.                              |
+| Search relevance                               | Offline evaluation     | 50 judgments; Recall@5 ≥ 96%; MRR ≥ 0.90.                                  |
 | Accessibility                                  | Browser + manual plan  | Keyboard skip, reflow, labels, warning structure, axe A/AA scan.           |
-| Performance                                    | Static budget          | Total browser JS â‰¤ 100 KiB; CSS â‰¤ 40 KiB.                              |
+| Performance                                    | Static budget          | Total browser JS ≤ 100 KiB; CSS ≤ 40 KiB.                                  |
 | Supply chain                                   | CI policy + audit      | Locked packages, release-age policy, SHA-pinned actions, production audit. |
 
 ## Commands
