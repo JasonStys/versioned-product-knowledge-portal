@@ -48,6 +48,10 @@ jobs:
         run: npm audit --prefix desktop --audit-level moderate
       - name: Build exact clean-source portable app
         run: node tools/package-native.mjs release/ci-portable
+      - name: Measure real fatal-startup and normal exit statuses
+        run:
+          node desktop/tests/fatal-startup.mjs .runtime/ci-startup-exits
+          release/ci-portable/win-unpacked/resources/catalog
       - name: Use real compiled widgets, revisions, restart and retained Quit
         shell: pwsh
         run: |
@@ -71,3 +75,4 @@ jobs:
             .runtime/ci-acceptance/acceptance.json
             .runtime/ci-acceptance/failure.json
             .runtime/ci-acceptance/native-*.png
+            .runtime/ci-startup-exits/acceptance.json

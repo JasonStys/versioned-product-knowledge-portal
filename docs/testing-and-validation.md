@@ -101,3 +101,18 @@ See [native reproduction](native-application.md#reproduce-the-native-acceptance)
 [dated report](reports/native-workspace-2026-11-11.md). The original browser route is a temporary
 preview and has explicit no-native-persistence tests. It is not an authentication or production
 multiuser test, and the native package has not thereby been certified on a clean Windows machine.
+
+### Fatal-startup exit status
+
+The added Windows regression executes five real Electron source-main processes with the original
+compiled catalog engines and a bounded inert renderer. Only modal error display is replaced.
+Resource refusal, a foreign owner token, an accepted save followed by rejected readiness and the
+unchanged 30-second readiness timeout must exit 1; a real saved revision followed by normal Quit
+must exit 0. Baseline revision hashes, ownership evidence and accepted writes are checked after
+actual process exit. The original compiled fourteen-case user journey remains a separate required
+gate. See the [dated measurement and limitations](reports/native-startup-status-2026-11-11.md).
+
+Local source validation for this correction passed 192 unit cases, 38 browser cases, strict types
+and lint, all 69 built HTML files and the unchanged 50-query search evaluation. V8 coverage was
+99.22% statements, 98.20% branches, 98.90% functions and 99.42% lines; the existing floors were not
+changed. These source results do not imply a hosted scan or future download/install pass.

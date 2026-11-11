@@ -121,6 +121,8 @@ defaults.
 | `desktop/package.json` / `desktop/package-lock.json` | Exact isolated Electron/build/consumer tools; no user runtime setup is required.                                                 |
 | `tools/package-native.mjs`                           | Exact-source original Astro/core staging, notices, original icon, unsigned portable ZIP and checksum.                            |
 | `desktop/tests/native-acceptance.mjs`                | Actual visible two-launch portable consumer with real store/exports and retained pending-dialog Quit.                            |
+| `desktop/tests/fatal-entry.cjs`                      | Actual Electron test entry: owned initial Chromium path and only modal error-display replacement, then the real source main.     |
+| `desktop/tests/fatal-startup.mjs`                    | Five actual source-main fatal/normal-control processes with real core/resource/profile/IPC and saved-evidence preservation.      |
 | `tests/unit/workspace.test.ts`                       | Original corpus through authoring, applicability, warning, identity and input-boundary scenarios.                                |
 | `tests/unit/native-state.test.ts`                    | Real immutable files, stale/failed commits, history caps and pre-init alias/oversized-directory refusals.                        |
 | `tests/unit/native-protocol.test.ts`                 | Actual resource hashes, fixed versioned routes and foreign/private/method/tamper refusals.                                       |
@@ -129,6 +131,7 @@ defaults.
 | `.github/workflows/native-windows.yml`               | Mandatory exact-source ZIP/extraction/compiled-consumer gate with read-only permissions and small evidence only.                 |
 | `docs/native-application.md`                         | Native user steps, storage/recovery, bounds, threat scope and package reproduction.                                              |
 | `docs/reports/native-workspace-2026-11-11.md`        | Dated observed local evidence, limits and required later hosted verification.                                                    |
+| `docs/reports/native-startup-status-2026-11-11.md`   | Actual legacy false-zero proof, fatal-only correction, unchanged normal Quit and independent regression scope.                   |
 
 `desktop/tests/payload.cjs` reuses the same-descriptor reader for bounded before/after portable
 integrity observations. `tests/unit/payload-hashes.test.ts` exercises real replacement
