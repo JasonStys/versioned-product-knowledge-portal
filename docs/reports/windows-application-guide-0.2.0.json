@@ -1,0 +1,65 @@
+{
+  "schema": 1,
+  "repository": "versioned-product-knowledge-portal",
+  "runtimeVersion": "0.2.0",
+  "runtimeSource": "4c7770cb4210b6b4dfb18d6bca8d40ab7ea2c51b",
+  "createdAt": "2026-11-11T23:33:33.837Z",
+  "author": "Jason Stys",
+  "document": "windows-application-guide-0.2.0.docx",
+  "sha256": "7dd3c1c4ffe3ed64c62c587961c99d2138246c93e36fe1ea16c059b8c7e8f133",
+  "screenshots": [
+    {
+      "file": "native-authoring-viewport.png",
+      "sha256": "398a04d6691f0066849ecb74554ba37e65e19ba04a8d767bf430b69578703133",
+      "width": 1345,
+      "height": 938,
+      "caption": "The actual installed app saved a revised E-104 title. The status confirms a saved revision; authoring, search and exports use this same catalog. Other editable fields continue below the viewport."
+    },
+    {
+      "file": "native-comparison-viewport.png",
+      "sha256": "3d62f32a441e3f97e449a17d12ac63176dc2ebc01ed24360fc2e18612aa5f650",
+      "width": 1345,
+      "height": 938,
+      "caption": "A normal scroll position shows the synthetic 1.5 warning and source assertion, followed by the different 2.0 diagnostic. The complete comparison remains scrollable; a checksum identifies source bytes and does not approve a procedure."
+    }
+  ],
+  "snippets": [
+    {
+      "file": "desktop/state.cjs",
+      "first": 279,
+      "last": 294,
+      "sha256": "85e064982323a469f4b7d0015862dec8b8f32f0321dc131f16367b6684f33996",
+      "url": "https://github.com/JasonStys/versioned-product-knowledge-portal/blob/4c7770cb4210b6b4dfb18d6bca8d40ab7ea2c51b/desktop/state.cjs#L279"
+    }
+  ],
+  "observedTests": [
+    {
+      "name": "Installed workflows",
+      "observed": "Fourteen original cases passed: literal authoring, exact original search/comparison, validation/refusal, history/restart, real held save, Keep/Discard, exports retained through repeated Quit, mobile reflow and accessibility. Two normal exits; all 165 files unchanged.",
+      "result": "Passed"
+    },
+    {
+      "name": "Source and hosted",
+      "observed": "192 unit cases, 38 browser cases, unchanged coverage floors, strict types/lint, 69 built HTML files, 50 search judgments and both dependency audits passed. All three main workflows and both processed CodeQL categories passed with no findings or open alerts.",
+      "result": "Passed"
+    },
+    {
+      "name": "Startup and distribution",
+      "observed": "Five actual Electron cases returned 1, 1, 1, 1 and 0 with the original 30-second timeout, saved-work and foreign-owner evidence intact. Both download identities and the complete installed inventory matched; individual icon metadata was verified.",
+      "result": "Passed"
+    }
+  ],
+  "visualReview": {
+    "approved": true,
+    "reviewer": "audit_space_drone",
+    "method": "All four current rendered pages individually viewed at original readable resolution; saved OOXML/source/screenshot identities checked.",
+    "ooxmlSchema": "passed",
+    "pageCount": 4,
+    "renderedPageSha256": {
+      "page-1.png": "7d1824b29a582889c760d455e62c3efa0a2f28574fba96f60d5461782854e598",
+      "page-2.png": "01d2e06d294bc21dfd83e731b7b88966a0c04760b4dcc4ff37fd8c737b2d531c",
+      "page-3.png": "d4768aa55d983e74b0dd5874832e196372671dbcebdad7eb9ec9f2f95c00cac8",
+      "page-4.png": "6cbd6fdfac0503a0a5ab898d3674580a013b88c0d39147a2aff3f09409dc63b9"
+    }
+  }
+}

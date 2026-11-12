@@ -20,6 +20,14 @@ independent portfolio project and is not operating guidance for real equipment.
 
 ## Graphical application and local authoring
 
+The published
+[Windows 0.2.0 release](https://github.com/JasonStys/versioned-product-knowledge-portal/releases/tag/v0.2.0)
+has a [four-page illustrated application guide](docs/reports/windows-application-guide-0.2.0.docx).
+Read the [installed validation](docs/reports/installed-windows-0.2.0-2026-11-11.md) and
+[guide identities](docs/reports/windows-application-guide-0.2.0.json) for actual authoring,
+comparison, history, startup and distribution observations. Earlier Office editions keep their own
+historical baselines.
+
 The Windows x64 portable build includes its runtime, original project engines, complete interface,
 an original book icon and dependency notices. Extract the **complete** archive and launch
 `KnowledgePortal.exe`; an end user needs neither Node.js nor an IDE. This is an unsigned portable
